@@ -1,6 +1,7 @@
 import React from "react";
 import "./spashText.css"
 
+
 const SpashText = () => {
     return (
         <div className="spashText-container">

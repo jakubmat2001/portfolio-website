@@ -1,11 +1,13 @@
 import {React, Component} from 'react';
 
-import Navigation from '../Components/navigation/navigation';
-import SpashText from '../Components/spashText/spashText';
-import AboutMe from '../Components/aboutMe/aboutMe';
-import Projects from '../Components/projects/projects';
+import Navigation from '../Components/Navigation/navigation';
+import SpashText from '../Components/SpashText/spashText';
+import AboutMe from '../Components/AboutMe/aboutMe';
+import Projects from '../Components/Projects/projects';
+import Education from '../Components/Education/education'
 
 import "./App.css"
+import '../fonts/Comfortaa-Medium.ttf'
 
 class App extends Component{
   constructor(){
@@ -27,6 +29,9 @@ class App extends Component{
         </div>
         <div className='projects-view'>
           <Projects/>
+        </div>
+        <div className='education-view'>
+          <Education/>
         </div>
       </div>
       

@@ -20,11 +20,10 @@ const Projects = () => {
                 </div>
             </div>
             <div className="project-text-description-container">
-                <p>This project is about blah This project is about blah
-                This project is about blah This project is about blah
-                This project is about blah This project is about blah
-                This project is about blah This project is about blah
-                </p>
+                <div className="project-text-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa enim nec dui nunc. Id interdum velit laoreet id donec ultrices. Ultrices in iaculis nunc sed augue. Tempor id eu nisl nunc mi ipsum faucibus vitae.
+                    </p>
+                </div>
             </div>
         </div>
     )

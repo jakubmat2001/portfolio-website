@@ -1,0 +1,22 @@
+.education-container {
+    width: 80%;
+    height: 100%;
+    background-color: gray;
+    box-shadow: 10px 15px 59px 10px black;
+    margin: 70% 10% 0 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.education-title-container {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.education-content-container {
+    display: grid;
+    grid-template-columns: 1, 1;
+}

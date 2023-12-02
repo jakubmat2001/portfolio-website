@@ -16,6 +16,11 @@
 
 .about-me-left-container {
     width: 60%;
+    display: flex;
+}
+
+.about-me-left-content {
+
 }
 
 .about-me-right-container{
