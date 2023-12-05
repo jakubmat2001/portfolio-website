@@ -1,13 +1,14 @@
 .project-container {
     width: 80%;
-    height: 90%;
+    height: 100%;
     margin: 0 auto 0 auto;
-    background-color: grey;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
     box-shadow: 10px 15px 59px 10px black;
     font-family: 'Medium', sans-serif;
+    border-radius: 2rem;
 }
 
 /* Top section */
@@ -15,69 +16,55 @@
     width: 100%;
     height: 10%;
     text-align: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin: 2rem 0 0 0;
+}
+
+.project-title-text {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 /* Mid Section */
 .project-panel-container {
-    height: 60%;
+    height: 90%;
     width: 100%;
-    display: grid;
-    grid-template-columns: 15% 65% 15%;
-    justify-content: center;
-    align-items: center;
-}
-
-.left-arrow-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
 }
 
-.left-arrow-image-a{
-    width: 50%;
+.image-text {
+    width: 100%;
     height: 50%;
+    margin: 2rem 0 0 0;
+    font-size: 15px;
+    word-wrap: break-word
 }
 
-.left-arrow-image {
-    width: 100%;
-    height: 100%;
-    transform: scaleX(-1)
+.carousel-control-prev, .carousel-control-next {
+    margin-bottom: 20%;
 }
 
-.project-display-container {
-    text-align: center;
+
+@media only screen and (max-width: 700px) {
+    .project-container {
+        width: 100%;
+    }
 }
 
-.right-arrow-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+@media only screen and (max-width: 400px) {
+    .project-container {
+        height: 55%;
+    }
 
-.right-arrow-image-a {
-    width: 50%;
-    height: 50%;
-}
-
-.right-arrow-image {
-    width: 100%;
-    height: 100%;
-}
-
-/* Bottom Section */
-.project-text-description-container {
-    width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-}
-
-.project-text-description{
-    width: 65%;
-    text-align: center;
-}
-
-.project-text-description p {
-    margin: 10px 0 0 0 
+    .carousel-control-prev, .carousel-control-next {
+        margin-bottom: 40%;
+    }
 }

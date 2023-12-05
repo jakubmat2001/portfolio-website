@@ -1,30 +1,27 @@
 .about-me-container {
     width: 100%;
-    height: 70%;
+    height: 75%;
     margin-top: 3%;
     display: flex;
-    background-color: grey;
     justify-content: center;
     box-shadow: 10px 15px 59px 10px black;
 }
 
 .about-me-wrapper {
     width: 100%;
-    padding: 4rem;
+    padding: 3rem 3rem 3rem 6rem;
     display: flex;
 }
 
 .about-me-left-container {
     width: 60%;
+    padding-left: 1rem;
     display: flex;
-}
-
-.about-me-left-content {
-
 }
 
 .about-me-right-container{
     width: 40%;
+    padding-left: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +35,10 @@
     object-fit: cover;
 }
 
+.about-me-button-container {
+    margin: 2rem 0 1rem 0;
+}
+
 .contact-me-button{
     background-color:white;
     color: black;
@@ -47,4 +48,54 @@
     min-height:30px; 
     min-width: 120px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 1220px) {
+    .about-me-container{
+        height: 90%;
+    }
+
+    .about-me-button-container {
+        margin: 1rem 0 1rem 0;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .about-me-container {
+        align-items: center;
+        height: 100%;
+     }
+
+    .about-me-wrapper{
+        height: 90%;
+        flex-direction: column-reverse;
+        padding: 3rem 3rem 3rem 3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-me-right-container{
+        padding-left: 0;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    .about-me-wrapper {
+        width: 100%;
+        padding: 0;
+        display: flex;
+    }
+
+    .about-me-left-container {
+        width: 90%;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .about-me-right-container {
+        width: 70%;
+        margin-bottom: 2rem;
+    }
 }
