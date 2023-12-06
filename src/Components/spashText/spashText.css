@@ -18,4 +18,164 @@
     
 }
 
+#spash-text-transistion-sun {
+    color: yellow;
+    font-size: large;
+    animation: flicker-sun 2.8s linear 0.4s alternate ;
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow, 0 0 60px yellow, 0 0 70px yellow;
+
+}
+
+@keyframes flicker-sun {
+    10% {
+        opacity: 1;
+        box-shadow: 10px 15px 59px 10px rgb((238, 242, 4)1);
+        text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow, 0 0 60px yellow, 0 0 70px yellow;
+    }
+    30% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    58% {
+        opacity: 0;
+    }
+    62% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    76% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    84% {
+        opacity: 1;
+    }
+    88% {  
+        opacity: 0;
+    }
+    89% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+    92% {
+        opacity: 1;
+    }
+    94% {  
+        opacity: 0;
+    }
+    95% {  
+        opacity: 1;
+    }
+    96% {  
+        opacity: 0;
+    }
+    97% {  
+        opacity: 1;
+    }
+    98% {  
+        opacity: 0;
+    }
+    99% {  
+        opacity: 1;
+    }
+    99.4% {  
+        opacity: 0;
+    }
+    99.8% {  
+        opacity: 1;
+        text-shadow: 0 0 0px rgb(255, 255, 255);
+        color: white;
+    }
+    100% {  
+        opacity: 0;
+
+    }
+  }
+
+  #spash-text-transistion-name {
+    font-size: large;
+    animation: flicker-name 2.8s linear 0.4s alternate ;
+    text-decoration: dotted;
+}
+
+@keyframes flicker-name {
+    10% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    58% {
+        opacity: 0;
+    }
+    62% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    76% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    84% {
+        opacity: 1;
+    }
+    88% {  
+        opacity: 0;
+    }
+    89% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+    92% {
+        opacity: 1;
+    }
+    94% {  
+        opacity: 0;
+    }
+    95% {  
+        opacity: 1;
+    }
+    96% {  
+        opacity: 0;
+    }
+    97% {  
+        opacity: 1;
+    }
+    98% {  
+        opacity: 0;
+
+    }
+    99% {  
+        opacity: 1;
+    }
+    99.4% {  
+        opacity: 0;
+    }
+    99.8% {  
+        opacity: 1;
+    }
+    100% {  
+        opacity: 0;
+        text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow, 0 0 60px yellow, 0 0 70px yellow;
+        color: yellow;
+    }
+  }
+
 

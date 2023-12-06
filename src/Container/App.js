@@ -14,7 +14,7 @@ class App extends Component{
   constructor(){
     super()
     this.state = {
-      name: "jakub"
+      name: "Jakub"
     }
   }
 
@@ -23,7 +23,7 @@ class App extends Component{
       <div>
         <div className='home-view'>
           <Navigation/>
-          <SpashText/>
+          <SpashText name={this.state.name}/>
         </div>
         <div className='about-me-view'>
           <AboutMe/>

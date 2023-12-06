@@ -54,6 +54,10 @@
   .contact-view {
     margin-top: 100%;
   }
+
+  .projects-view {
+    height: 55vh;
+  }
  }
 
  @media only screen and (max-height: 700px) {
