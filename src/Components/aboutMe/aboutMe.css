@@ -90,6 +90,10 @@
     .about-me-left-container {
         width: 90%;
     }
+
+    .my-profile-photo {
+        margin: 1rem;
+    }
 }
 
 
@@ -97,5 +101,9 @@
     .about-me-right-container {
         width: 70%;
         margin-bottom: 2rem;
+    }
+
+    .about-me-container{
+        height: 85%;
     }
 }

@@ -22,26 +22,55 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr ;
     align-items: center;
+    margin-bottom: 10%;
+
 }
 
-.university-image {
+.education-uni-1-image {
     display: flex;
     justify-content: center;
 }
 
-.university-text {
+.education-image{
+    width: 300px;
+    height: 450px;
+}
+
+.education-uni-1-text {
     text-align: center;
     margin: 0 1rem 0 1rem;
 }
 
-.college-text {
-    text-align: center;
-    margin: 0 1rem 0 1rem;
-}
-
-.college-image {
+.education-uni-2-image {
     display: flex;
     justify-content: center;
+}
+
+.education-uni-2-text {
+    text-align: center;
+    margin: 0 1rem 0 1rem;
+}
+
+.education-college-1-image {
+    display: flex;
+    justify-content: center;
+}
+
+.education-college-1-text {
+    text-align: center;
+    margin: 0 1rem 0 1rem;
+}
+
+
+.animated.fadeIn {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px){
+    .education-container {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 700px){
@@ -58,31 +87,53 @@
         height: 10%;
     }
 
-    .university-image {
+    .education-uni-1-image  {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 2;
     }
     
-    .university-text {
+    .education-uni-1-text  {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 2;
         grid-row-end: 3;
     }
     
-    .college-text {
+    .education-uni-2-image  {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 4;
         grid-row-end: 5;
     }
     
-    .college-image {
+    .education-uni-2-image  {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 3;
         grid-row-end: 4;
     }
+
+    .education-college-1-image {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+    
+    .education-college-1-text {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 6;
+        grid-row-end: 7;
+    }
 }
+
+
+@media only screen and (max-width: 800px){
+    .education-container {
+        width: 90%;
+    }
+}
+

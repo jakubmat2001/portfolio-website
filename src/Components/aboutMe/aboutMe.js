@@ -1,9 +1,11 @@
 import React from "react";
 import selfie from "../../Images/selfie.JPEG"
+import ScrollAnimation from 'react-animate-on-scroll';
 import './aboutMe.css'
 
 const AboutMe = () => {
     return (
+        <ScrollAnimation animateIn="fadeIn">
         <div className="about-me-container">
             <div className='about-me-wrapper'>
                 <div className="about-me-left-container">
@@ -11,7 +13,13 @@ const AboutMe = () => {
                         <p>Hey, Welcome</p>
 
                         <h2><b>I'm Jakub Matusik</b></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam sollicitudin tempor id eu nisl nunc mi. Lectus arcu bibendum at varius vel. Eleifend donec pretium vulputate sapien nec sagittis. Amet justo donec enim diam vulputate ut pharetra sit amet. Viverra nam libero justo laoreet sit amet cursus sit. Quis lectus nulla at volutpat. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Est ante in nibh mauris cursus mattis molestie. Vitae congue eu consequat ac felis donec et odio pellentesque. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Pellentesque elit eget gravida cum sociis. Pretium vulputate sapien nec sagittis. Quis eleifend quam adipiscing vitae. Cras semper auctor neque vitae tempus quam pellentesque nec nam. Tellus elementum sagittis vitae et. Sit amet luctus venenatis lectus magna fringilla urna porttitor. Massa tempor nec feugiat nisl pretium fusce id velit ut. Leo a diam sollicitudin tempor id eu nisl nunc. Sed felis eget velit aliquet sagittis id consectetur purus ut.
+                        <p>A fresh 2023's Robert Gordon University graduate, with over 6 months of perfecting his craft in Fullstack development
+                            obtained from University, I went an extra mile and expanded my knowladge and gained new skillsets by completing paid online courses such as: ZTM/Codeacademy. Capable of finding solutions to many difficult problems I have encountered when developing
+                            three of my projects over years while still improving them with new ideas. Now I belive I'm ready to bring alot of value to your company by being self sufficiant developer and having skillset edge over other fresh graduates.
+                            <br/><br/>
+                            In the future I plan to grow into a loyal Senior devloper at your company, as I often find 
+                            myself commiting to one workpace for 3+ years. They say loyality is a halt to your progress in life, I on the other hand
+                            belive it is the best way to develop greatr understanding of one and be greatfull for what you have.
                         </p>
                         <div className="about-me-button-container">
                             <button className="contact-me-button">Contact Me</button>
@@ -23,6 +31,7 @@ const AboutMe = () => {
                 </div>
             </div>
         </div>
+        </ScrollAnimation>
     )
 }
 
