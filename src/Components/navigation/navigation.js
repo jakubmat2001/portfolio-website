@@ -2,7 +2,7 @@ import {React, useState, useEffect } from "react";
 import './navigation.css'
 import '../../fonts/Comfortaa-Medium.ttf'
 
-const Navigation = () => {
+const Navigation = ({ scrollToAboutMe, scrollToProjects,scrollToContacts, scrollToEducation }) => {
     const [lastScrollY, setScrollY] = useState(0)
     const [showNav, setShowNav] = useState(true)
     const [removeShadow, setRemoveShadow] = useState(false)
@@ -26,12 +26,35 @@ const Navigation = () => {
                 setShowNav(true)
             }
             setScrollY(window.scrollY)
+            console.log(window.scrollY)
         });
     }
 
     const shadowEffect = () => {
         window.scrollY === 0 ? setRemoveShadow(true) : setRemoveShadow(false)
     }
+
+    const handleClickAbout = (e) => {
+        e.preventDefault();  
+        scrollToAboutMe();
+    };
+
+    const handleClickProjects = (e) => {
+        e.preventDefault();  
+        scrollToProjects();
+    };
+
+    const handleClickEducation = (e) => {
+        e.preventDefault();  
+        scrollToEducation();
+    };
+
+    const handleClickContact = (e) => {
+        e.preventDefault();  
+        scrollToContacts();
+    };
+
+
 
     return (
         <div className={`brand-and-navigation-container ${showNav ? 'visible' : 'hidden'}`}
@@ -43,11 +66,10 @@ const Navigation = () => {
             <div className="navigation-container">
                 <nav className="navigation">
                     <ul>
-                        <li><a href="">About Me</a></li>
-                        <li><a href="">Projects</a></li>
-                        <li><a href="">Education</a></li>
-                        <li><a href="">This Portfolio</a></li>
-                        <li><a href="">Contact Me</a></li>
+                        <li onClick={handleClickAbout}><a href="about">About Me</a></li>
+                        <li onClick={handleClickProjects}><a href="projects">Projects</a></li>
+                        <li onClick={handleClickEducation}><a href="education">Education</a></li>
+                        <li onClick={handleClickContact}><a href="contact-me">Contact Me</a></li>
                     </ul>
                 </nav>
             </div>

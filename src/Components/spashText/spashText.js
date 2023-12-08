@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ScrollAnimation from 'react-animate-on-scroll';
 import "./spashText.css"
 
-const SpashText = ({name}) => {
+const SpashText = ({name, aboutMeViewHeight}) => {
     const [displayText, setDisplayText] = useState("Sun")
 
     useEffect(() => {
@@ -23,6 +23,7 @@ const SpashText = ({name}) => {
                 <p>As</p>
                 <p key={displayText} id={displayText === "Sun" ? "spash-text-transistion-sun" : "spash-text-transistion-name"}><b>{displayText}</b></p>
                 <p>Rises</p>
+                <p>{aboutMeViewHeight}</p>
 
             </div>
         </ScrollAnimation>

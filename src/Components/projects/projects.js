@@ -6,10 +6,10 @@ import dockKeep from "../../Images/DK.PNG"
 
 import "./projects.css"
 
-const Projects = () => {
+const Projects = React.forwardRef((props, ref) => {
     return (
         <ScrollAnimation animateIn="fadeIn">
-        <div className="project-container">
+        <div ref={ref} className="project-container">
             <div className="project-title-container">
                 <div className="project-title-text">
                     <p>PROJECTS</p>
@@ -52,6 +52,6 @@ const Projects = () => {
         </div>
         </ScrollAnimation>
     )
-}
+})
 
 export default Projects;

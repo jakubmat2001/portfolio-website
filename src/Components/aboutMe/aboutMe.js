@@ -3,10 +3,10 @@ import selfie from "../../Images/selfie.JPEG"
 import ScrollAnimation from 'react-animate-on-scroll';
 import './aboutMe.css'
 
-const AboutMe = () => {
+const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
     return (
         <ScrollAnimation animateIn="fadeIn">
-        <div className="about-me-container">
+        <div ref={navigateAboutMeRef} className="about-me-container">
             <div className='about-me-wrapper'>
                 <div className="about-me-left-container">
                     <div className="about-me-left-content">
@@ -33,6 +33,6 @@ const AboutMe = () => {
         </div>
         </ScrollAnimation>
     )
-}
+})
 
 export default AboutMe
