@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 110vh; 
+    height: 110vh;
   }
 
 .about-me-view {
@@ -14,7 +14,7 @@
 
 .projects-view {
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   margin-top: 30%;
@@ -22,7 +22,8 @@
 
 .education-view {
   width: 100%;
-  height: 320vh;
+  height: auto;
+
   display: flex;
   justify-content: center;
   margin: 40% auto 0 auto;
@@ -30,7 +31,8 @@
 
 .contact-view {
   width: 100%;
-  height: 50vh;
+  height: auto;
+
   display: flex;
   align-items: center;
   margin-top: 50%;
@@ -39,7 +41,8 @@
 /* Width Media */
 @media only screen and (max-width: 1050px) {
   .about-me-view {
-    height: 140vh;
+    height: auto;
+
   }
 
   .education-view {
@@ -54,13 +57,8 @@
  @media only screen and (max-width: 850px) {
   .projects-view {
     margin-top: 100%;
-    height: 100vh;
-  }
- }
+    height: auto;
 
- @media only screen and (max-width: 700px) {
-  .education-view{
-    height: 430vh;
   }
  }
 
@@ -68,31 +66,13 @@
   .contact-view {
     margin-top: 100%;
   }
-
-  .projects-view {
-    height: 55vh;
-  }
-
-  .education-view{
-    height: 360vh;
-  }
  }
 
 
  /* Height Media */
  @media only screen and (max-height: 700px) {
-  .about-me-view {
-    height: 170vh;
-  }
-
   .education-view {
-    height:350vh;
     margin: 120% auto 0 auto;
   }
  }
 
- @media only screen and (max-height: 450px) {
-  .about-me-view {
-    height: 200vh;
-  }
- }

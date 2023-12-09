@@ -1,5 +1,6 @@
 .project-container {
     width: 80%;
+    height: auto;
     margin: 0 auto; 
     display: flex;
     flex-direction: column;
@@ -16,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0; 
+    margin: 2rem 0; 
 }
 
 .project-title-text {
@@ -59,19 +60,46 @@
     position: absolute;
 }
 
+#project-images-fc, #project-images-dk {
+    max-width: auto;
+    max-height: 550px;
+}
+
 .animated.fadeIn {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-#dockeep-image {
+@media only screen and (min-width: 1600px) {
+   
+    #project-images-fc, #project-images-dk {
+        max-height: 700px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+   
+    #project-images-fc, #project-images-dk {
+        max-height: 450px;
+    }
 }
 
 @media only screen and (max-width: 700px) {
     .project-container {
         width: 100%;
     }
+
+    #project-images-fc, #project-images-dk {
+        max-height: 300px;
+    }
 }
 
+
+@media only screen and (max-width: 450px) {
+   
+    #project-images-fc, #project-images-dk {
+        max-height: 200px;
+    }
+}
 
