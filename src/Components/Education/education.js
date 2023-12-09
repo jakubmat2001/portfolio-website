@@ -1,9 +1,10 @@
 import React from "react";
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Tilt } from 'react-tilt'
-import filler from "../../Images/s-l400.jpg"
 import uniGradeSheet from "../../Images/UniGradeProfile.PNG"
 import uniAwardCert from "../../Images/UniAwardGrade.PNG"
+import collegeAwardCert from "../../Images/CollegeDiploma.png"
+import collegeGradeSheet from "../../Images/CollegeGrades.png"
 import "./education.css"
 
 
@@ -28,15 +29,16 @@ const Education = React.forwardRef((props, ref) => {
                 <div className="education-title-container">
                     <p>Education</p>
                 </div>
+                <hr className="hr-line" />
                 <div className="education-content-container">
                     <div className="education-uni-1-image">
                         <Tilt options={defaultOptions} style={{ height: 450, width: 300 }}>
-                            <img className="education-image" src={uniGradeSheet} />
+                            <img className="education-image" src={uniGradeSheet} alt="uni-grades"/>
                         </Tilt>
 
                     </div>
                     <div className="education-uni-1-text">
-                        <p>Complete grade breakdown over the duration of a 4 year course at Robert Gordon's University <br/><br/></p>
+                        <p>Complete grade breakdown over the duration of a 4 year course at Robert Gordon's University <br /><br /></p>
                         <p> Grade Break Down:
                             <br />
                             A: 1
@@ -50,25 +52,41 @@ const Education = React.forwardRef((props, ref) => {
                     </div>
                     <div className="education-uni-2-text">
                         <p> Factors like full-time employment to support myself and lack of student loans contributed to me achiving lower grade potential then planned such as a <b>B</b> in my honours. It hasn't helped that I tend to be overly ambitious with my projects and more ofthen then not I come up with projects ideas that could serve me in the future such as a DocKeep project for my college HND couse which
-                            I achived an <b>A</b> in. Still remebering my previous success with DocKeep, I felt confident I could replicate that success with
-                            Forex-Article-Sentiment-Analyzer (Honours Project). In the end a <b>C</b> grade was achived which yielded an end result <b>2:2</b>
-                            honours grade.
+                        I achived an <b>A</b> in. Still remebering my previous success with DocKeep, I felt confident I could replicate that success with Forex-Article-Sentiment-Analyzer (Honours Project). In the end a <b>C</b> grade was achived which yielded an end result
+                        <b>2:2</b> honours grade.
                         </p>
                     </div>
                     <div className="education-uni-2-image">
-                        <Tilt options={defaultOptions} style={{ height: 450, width: 300 } }>
-                            <img className="education-image" src={uniAwardCert} />
+                        <Tilt options={defaultOptions} style={{ height: 450, width: 300 }}>
+                            <img className="education-image" src={uniAwardCert} alt="uni-cert"/>
                         </Tilt>
 
                     </div>
                     <div className="education-college-1-image">
                         <Tilt options={defaultOptions} style={{ height: 450, width: 300 }}>
-                            <img className="education-image" src={filler} />
+                            <img className="education-image" src={collegeGradeSheet} alt="college-grades"/>
                         </Tilt>
-
                     </div>
                     <div className="education-college-1-text">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi porta lorem mollis aliquam. Feugiat nisl pretium fusce id velit ut tortor. Massa tincidunt dui ut ornare lectus sit amet. At augue eget arcu dictum varius duis at consectetur lorem. </p>
+                        <p> Course lasting a total of 2 years and comprising of HNC (year 1) & HND (year 2):
+                            <br />
+                            <br />
+                            Final Grades:
+                            <br />
+                            Higher National Computing: 2019<b>C</b>
+                            <br />
+                            Higher National Diploma: 2021 <b>A</b>
+                        </p>
+                    </div>
+
+                    <div className="education-college-2-text">
+                        <p> A Final grade of <b>A</b> was achived due to the DocKeep application success for the final year's project </p>
+                    </div>
+                    <div className="education-college-2-image">
+                        <Tilt options={defaultOptions} style={{ height: 450, width: 300 }}>
+                            <img className="education-image" src={collegeAwardCert} alt="college-cert"/>
+                        </Tilt>
+
                     </div>
                 </div>
             </div>

@@ -54,11 +54,17 @@
     text-decoration: none;
     padding: 0 20px 0 0;
     color: white;
-    transition: color 1s ease-in;
+    transition: text-shadow, color 0.3s ease-in;
 }
 
 .navigation a:hover{
-    color: black;
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px;
+    color: yellow;
+}
+
+.navigation a:active{
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px;
+    color: yellow;
 }
 
 .navigation li {

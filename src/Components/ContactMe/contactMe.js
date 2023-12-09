@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contactMe.css"
 
 
 const ContactMe = React.forwardRef((props, ref) => {
+
     return (
         <div ref={ref} className="contact-me-container">
             <footer
@@ -44,7 +45,7 @@ const ContactMe = React.forwardRef((props, ref) => {
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: "60px", backgroundColor: "#7c4dff", height: "2px" }}/>
                                 <p>
-                                    <a href="#!" className="text-white">Request Grades</a>
+                                    <a  href="#!" className="text-white">Request Grades</a>
                                 </p>
                             </div>
 

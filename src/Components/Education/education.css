@@ -9,11 +9,18 @@
 
 .education-title-container {
     width: 100%;
-    height: 15%;
+    height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.hr-line {
+    width: 100%;
+    border: none; 
+    height: 3px; 
+    background-image: linear-gradient(to right, transparent, black, transparent); 
+  }
 
 .education-content-container {
     width: 100%;
@@ -22,8 +29,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr ;
     align-items: center;
-    margin-bottom: 10%;
-
+    margin: 10% 0 10% 0;
 }
 
 .education-uni-1-image {
@@ -61,6 +67,15 @@
     margin: 0 1rem 0 1rem;
 }
 
+.education-college-2-image {
+    display: flex;
+    justify-content: center;
+}
+
+.education-college-2-text {
+    text-align: center;
+    margin: 0 1rem 0 1rem;
+}
 
 .animated.fadeIn {
     display: flex;
@@ -127,6 +142,20 @@
         grid-column-end: 2;
         grid-row-start: 6;
         grid-row-end: 7;
+    }
+
+    .education-college-2-image {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 7;
+        grid-row-end: 8;
+    }
+    
+    .education-college-2-text {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 8;
+        grid-row-end: 9;
     }
 }
 

@@ -20,11 +20,7 @@ const Navigation = ({ scrollToAboutMe, scrollToProjects,scrollToContacts, scroll
 
     const navControl = () => {
         window.addEventListener("scroll", () => {
-            if (lastScrollY < window.scrollY) {
-                setShowNav(false)
-            } else {
-                setShowNav(true)
-            }
+            lastScrollY < window.scrollY ? setShowNav(false) : setShowNav(true)
             setScrollY(window.scrollY)
             console.log(window.scrollY)
         });
@@ -53,7 +49,6 @@ const Navigation = ({ scrollToAboutMe, scrollToProjects,scrollToContacts, scroll
         e.preventDefault();  
         scrollToContacts();
     };
-
 
 
     return (

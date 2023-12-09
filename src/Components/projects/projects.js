@@ -20,6 +20,7 @@ const Projects = React.forwardRef((props, ref) => {
                     <MDBCarouselItem itemId={1} interval={8000}>
                         <img src={faceRecogn} className='d-block w-100' alt='...' />
                         <div className="image-text">
+                            <h5>N-Shine FaceRecogntion - Face Detection App </h5>
                             <p> Live hosted face recognition website with Signin/Register and <b>email verification </b> functionalites.
                                 Users are able to level-up their ranks as they submit more images with human faces on them earining them different emote
                                 for each new rank level.
