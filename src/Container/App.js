@@ -6,6 +6,8 @@ import AboutMe from '../Components/AboutMe/aboutMe';
 import Projects from '../Components/Projects/projects';
 import Education from '../Components/Education/education';
 import ContactMe from '../Components/ContactMe/contactMe';
+import Modal from "../Components/Modal/modal";
+import RequestGrades from '../Components/RequestGrades/requestGrades'
 
 import "./App.css";
 import '../fonts/Comfortaa-Medium.ttf';
@@ -14,6 +16,7 @@ const App = () => {
   const [name] = useState("Jakub");
   const [clientViewHeight, setClientViewHeight] = useState(0);
   const [aboutMeViewHeight, setAboutMeViewHeight] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navigateAboutMeRef = useRef(null);
   const navigateProjectsRef = useRef(null);
@@ -48,8 +51,20 @@ const App = () => {
     navigateEducationRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const toggleModal = () => {
+    setIsModalOpen(isModalOpen => !isModalOpen)
+    console.log("modal toggled")
+  }
+
+  
+
   return (
+    
     <div id='page-view-height' ref={clientWindowHeight}>
+      {isModalOpen &&
+        <Modal >
+          <RequestGrades isModalOpen={isModalOpen} toggleModal={toggleModal}/>
+        </Modal>}
       <div className='home-view'>
         <Navigation
           scrollToAboutMe={scrollToAboutMe}
@@ -70,7 +85,7 @@ const App = () => {
         <Education ref={navigateEducationRef} />
       </div>
       <div className='contact-view'>
-        <ContactMe ref={navigateContactMeRef} />
+        <ContactMe ref={navigateContactMeRef} toggleModal={toggleModal}/>
       </div>
     </div>
   );

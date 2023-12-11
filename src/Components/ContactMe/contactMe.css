@@ -1,3 +1,8 @@
+.display-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .contact-me-container {
     width: 100%;
     height: 50%;
