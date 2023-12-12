@@ -2,7 +2,7 @@ import {React, useState, useEffect } from "react";
 import './navigation.css'
 import '../../fonts/Comfortaa-Medium.ttf'
 
-const Navigation = ({ scrollToAboutMe, scrollToProjects,scrollToContacts, scrollToEducation }) => {
+const Navigation = ({ scrollToAboutMe, scrollToProjects, scrollToContacts, scrollToEducation, clientViewHeight }) => {
     const [lastScrollY, setScrollY] = useState(0)
     const [showNav, setShowNav] = useState(true)
     const [removeShadow, setRemoveShadow] = useState(false)

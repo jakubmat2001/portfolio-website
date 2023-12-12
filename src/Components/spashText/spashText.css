@@ -103,7 +103,6 @@
   #spash-text-transistion-name {
     font-size: large;
     animation: flicker-name 2.8s linear 0.4s alternate ;
-    text-decoration: dotted;
 }
 
 @keyframes flicker-name {

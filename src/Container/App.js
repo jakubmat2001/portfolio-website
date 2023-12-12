@@ -19,6 +19,7 @@ const App = () => {
   const [aboutMeViewHeight, setAboutMeViewHeight] = useState(0);
   const [isRequestGradesOpen, setIsRequestGradesOpen] = useState(false);
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const [orgName, setOrgName] = useState('your company');
 
   const navigateAboutMeRef = useRef(null);
   const navigateProjectsRef = useRef(null);
@@ -34,11 +35,11 @@ const App = () => {
       setClientViewHeight(clientWindowHeight.current.clientHeight);
       setAboutMeViewHeight(navigateAboutMeRef.current.clientHeight);
     }
-
     setTimeout(() => {
       setIsPopUpOpen(true)
     }, 1500)
   }, []);
+
   const scrollToAboutMe = () => {
     navigateAboutMeRef.current.scrollIntoView({ behavior: 'smooth' });
   };
@@ -55,14 +56,20 @@ const App = () => {
     navigateEducationRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Toggle the grades modal from closed/open => open/close anytime function triggers
   const toggleRequestGrades = (e) => {
     setIsRequestGradesOpen(isRequestGradesOpen => !isRequestGradesOpen)
     e.preventDefault()
   }
-
+// Toggle the pop-up modal from closed/open => open/close anytime function triggers
   const togglePopUp = (e) => {
     setIsPopUpOpen(isPopUpOpen => !isPopUpOpen)
     e.preventDefault()
+  }
+
+  // Changes text on the website from a popUp input value
+  const handleChangeText = (text) => {
+    setOrgName(text);
   }
 
   return (
@@ -74,7 +81,7 @@ const App = () => {
 
       {isPopUpOpen &&
         <Modal>
-          <PopUp togglePopUp={togglePopUp} />
+          <PopUp togglePopUp={togglePopUp} handleChangeText={handleChangeText} />
         </Modal>}
       <div className='home-view'>
         <Navigation
@@ -84,10 +91,10 @@ const App = () => {
           scrollToEducation={scrollToEducation}
           clientViewHeight={clientViewHeight}
         />
-        <SpashText name={name} />
+        <SpashText name={name}/>
       </div>
       <div className='about-me-view'>
-        <AboutMe ref={navigateAboutMeRef} />
+        <AboutMe ref={navigateAboutMeRef} orgName={orgName}/>
       </div>
       <div className='projects-view'>
         <Projects ref={navigateProjectsRef} />

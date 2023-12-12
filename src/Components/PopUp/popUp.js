@@ -2,16 +2,18 @@ import React from "react";
 import { useState } from "react";
 import "./popUp.css"
 
-const PopUp = ({togglePopUp}) => {
+const PopUp = ({togglePopUp, handleChangeText}) => {
     const [popUpInput, setPopUpInput] = useState('')
 
     const handlePopUpInput = (event) => {
         setPopUpInput(event.target.value);
     }
 
-    const handleSubmit = () => {
-        popUpInput !=='' ? console.log(popUpInput) : console.log("empty")
+    const handleSubmit = (event) => {
+        popUpInput !=='' ? handleChangeText(popUpInput) : console.log("empty")
+        togglePopUp(event);
     }
+
 
     return (
         <div className="pop-up-window">
@@ -30,7 +32,7 @@ const PopUp = ({togglePopUp}) => {
                 </main>
                 <div className="pop-up-submit">
                     <button onClick={togglePopUp} className="pop-up-no-opt">Cancel</button>
-                    <button onClick={() => handleSubmit()} className="pop-up-yes-opt">Thank You</button>
+                    <button onClick={(event) => handleSubmit(event)} className="pop-up-yes-opt">Thank You</button>
                 </div>
             </div>
         </div>
