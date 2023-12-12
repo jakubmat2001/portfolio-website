@@ -7,7 +7,6 @@ const Navigation = ({ scrollToAboutMe, scrollToProjects,scrollToContacts, scroll
     const [showNav, setShowNav] = useState(true)
     const [removeShadow, setRemoveShadow] = useState(false)
 
-
     useEffect(() => {
         shadowEffect()
         window.addEventListener('scroll', navControl);
@@ -22,7 +21,6 @@ const Navigation = ({ scrollToAboutMe, scrollToProjects,scrollToContacts, scroll
         window.addEventListener("scroll", () => {
             lastScrollY < window.scrollY ? setShowNav(false) : setShowNav(true)
             setScrollY(window.scrollY)
-            console.log(window.scrollY)
         });
     }
 

@@ -8,6 +8,7 @@ import Education from '../Components/Education/education';
 import ContactMe from '../Components/ContactMe/contactMe';
 import Modal from "../Components/Modal/modal";
 import RequestGrades from '../Components/RequestGrades/requestGrades'
+import PopUp from '../Components/PopUp/popUp';
 
 import "./App.css";
 import '../fonts/Comfortaa-Medium.ttf';
@@ -16,7 +17,8 @@ const App = () => {
   const [name] = useState("Jakub");
   const [clientViewHeight, setClientViewHeight] = useState(0);
   const [aboutMeViewHeight, setAboutMeViewHeight] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isRequestGradesOpen, setIsRequestGradesOpen] = useState(false);
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
 
   const navigateAboutMeRef = useRef(null);
   const navigateProjectsRef = useRef(null);
@@ -31,10 +33,12 @@ const App = () => {
     if (clientWindowHeight.current) {
       setClientViewHeight(clientWindowHeight.current.clientHeight);
       setAboutMeViewHeight(navigateAboutMeRef.current.clientHeight);
-      console.log(aboutMeViewHeight)
     }
-  }, []);
 
+    setTimeout(() => {
+      setIsPopUpOpen(true)
+    }, 1500)
+  }, []);
   const scrollToAboutMe = () => {
     navigateAboutMeRef.current.scrollIntoView({ behavior: 'smooth' });
   };
@@ -51,19 +55,26 @@ const App = () => {
     navigateEducationRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const toggleModal = () => {
-    setIsModalOpen(isModalOpen => !isModalOpen)
-    console.log("modal toggled")
+  const toggleRequestGrades = (e) => {
+    setIsRequestGradesOpen(isRequestGradesOpen => !isRequestGradesOpen)
+    e.preventDefault()
   }
 
-  
+  const togglePopUp = (e) => {
+    setIsPopUpOpen(isPopUpOpen => !isPopUpOpen)
+    e.preventDefault()
+  }
 
   return (
-    
     <div id='page-view-height' ref={clientWindowHeight}>
-      {isModalOpen &&
+      {isRequestGradesOpen &&
         <Modal >
-          <RequestGrades isModalOpen={isModalOpen} toggleModal={toggleModal}/>
+          <RequestGrades toggleModal={toggleRequestGrades} />
+        </Modal>}
+
+      {isPopUpOpen &&
+        <Modal>
+          <PopUp togglePopUp={togglePopUp} />
         </Modal>}
       <div className='home-view'>
         <Navigation
@@ -85,7 +96,7 @@ const App = () => {
         <Education ref={navigateEducationRef} />
       </div>
       <div className='contact-view'>
-        <ContactMe ref={navigateContactMeRef} toggleModal={toggleModal}/>
+        <ContactMe ref={navigateContactMeRef} toggleModal={toggleRequestGrades} />
       </div>
     </div>
   );
