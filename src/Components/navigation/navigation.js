@@ -2,7 +2,7 @@ import {React, useState, useEffect } from "react";
 import './navigation.css'
 import '../../fonts/Comfortaa-Medium.ttf'
 
-const Navigation = ({ scrollToAboutMe, scrollToProjects, scrollToContacts, scrollToEducation, clientViewHeight }) => {
+const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrollToContacts, scrollToEducation, clientViewHeight }) => {
     const [lastScrollY, setScrollY] = useState(0)
     const [showNav, setShowNav] = useState(true)
     const [removeShadow, setRemoveShadow] = useState(false)
@@ -16,7 +16,7 @@ const Navigation = ({ scrollToAboutMe, scrollToProjects, scrollToContacts, scrol
         };
     }, [lastScrollY]);
 
-
+    // Shows navigation when user scrolls down a page and hides it when they scroll up
     const navControl = () => {
         window.addEventListener("scroll", () => {
             lastScrollY < window.scrollY ? setShowNav(false) : setShowNav(true)
@@ -24,8 +24,14 @@ const Navigation = ({ scrollToAboutMe, scrollToProjects, scrollToContacts, scrol
         });
     }
 
+    // Hide the navigation shadow effect if user is at the very top of the webpage
     const shadowEffect = () => {
         window.scrollY === 0 ? setRemoveShadow(true) : setRemoveShadow(false)
+    }
+
+    const handleScrollToSpashText = (e) => {
+        e.preventDefault();
+        scrollToSpashText();
     }
 
     const handleClickAbout = (e) => {
@@ -53,7 +59,7 @@ const Navigation = ({ scrollToAboutMe, scrollToProjects, scrollToContacts, scrol
         <div className={`brand-and-navigation-container ${showNav ? 'visible' : 'hidden'}`}
             style={{ boxShadow: removeShadow ? 'none' : '0px 8px 10px -5px rgba(0, 0, 0, 0.5)' }}>
             <div className="brand-name-container">
-                <p>N-Shine</p>
+                <p id="navigation-logo-text" onClick={handleScrollToSpashText}>N-Shine</p>
             </div>
 
             <div className="navigation-container">

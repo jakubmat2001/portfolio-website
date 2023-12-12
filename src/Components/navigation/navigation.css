@@ -54,7 +54,7 @@
     text-decoration: none;
     padding: 0 20px 0 0;
     color: white;
-    transition: text-shadow, color 0.3s ease-in;
+    transition:  color 0.3s ease-in;
 }
 
 .navigation a:hover{
@@ -69,6 +69,17 @@
 
 .navigation li {
    display: inline;
+}
+
+#navigation-logo-text {
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+#navigation-logo-text:hover {
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px;
+    color: yellow;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 700px) {

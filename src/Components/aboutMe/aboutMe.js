@@ -4,6 +4,12 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import './aboutMe.css'
 
 const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
+
+    const handleClickContact = (e) => {
+        e.preventDefault();  
+        props.scrollToContacts();
+    };
+
     return (
         <ScrollAnimation animateIn="fadeIn">
         <div ref={navigateAboutMeRef} className="about-me-container">
@@ -22,7 +28,7 @@ const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
                             belive it is the best way to develop greater understanding of one and be greatfull for what you have.
                         </p>
                         <div className="about-me-button-container">
-                            <button className="contact-me-button">Contact Me</button>
+                            <button onClick={handleClickContact} className="contact-me-button">Contact Me</button>
                         </div>
                     </div>
                 </div>

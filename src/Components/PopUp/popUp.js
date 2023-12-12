@@ -5,13 +5,22 @@ import "./popUp.css"
 const PopUp = ({togglePopUp, handleChangeText}) => {
     const [popUpInput, setPopUpInput] = useState('')
 
+    const focusInput = () => {
+        const inputBox = document.getElementById("pop-up-input")
+        inputBox.style.border = "1px solid red"
+
+    }
+
     const handlePopUpInput = (event) => {
         setPopUpInput(event.target.value);
     }
 
+    
     const handleSubmit = (event) => {
-        popUpInput !=='' ? handleChangeText(popUpInput) : console.log("empty")
-        togglePopUp(event);
+        if (popUpInput === ""){
+            return focusInput()
+        }
+        return (handleChangeText(popUpInput), togglePopUp(event))
     }
 
 
@@ -24,7 +33,7 @@ const PopUp = ({togglePopUp, handleChangeText}) => {
                 </div>
                 <div className="pop-up-text">
                     <p>Before we begin your tour...<br/> I highly advise on entering name 
-                    of your organisation to improve your experiance <br/><br/><b>Note: </b>Please ignore if your not an employer
+                    of your organisation to improve your viewing experiance <br/><br/><b>Note: </b>Please ignore if your not an employer
                     </p>
                 </div>
                 <main className="pop-up-form">

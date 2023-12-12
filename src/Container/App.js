@@ -21,6 +21,7 @@ const App = () => {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [orgName, setOrgName] = useState('your company');
 
+  const navigateSpashTextRef = useRef(null);
   const navigateAboutMeRef = useRef(null);
   const navigateProjectsRef = useRef(null);
   const navigateEducationRef = useRef(null);
@@ -39,6 +40,10 @@ const App = () => {
       setIsPopUpOpen(true)
     }, 1500)
   }, []);
+
+  const scrollToSpashText = () => {
+    navigateSpashTextRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const scrollToAboutMe = () => {
     navigateAboutMeRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -67,7 +72,7 @@ const App = () => {
     e.preventDefault()
   }
 
-  // Changes text on the website from a popUp input value
+  // Changes text on the website from a popUp form input value
   const handleChangeText = (text) => {
     setOrgName(text);
   }
@@ -85,16 +90,17 @@ const App = () => {
         </Modal>}
       <div className='home-view'>
         <Navigation
+          scrollToSpashText={scrollToSpashText}
           scrollToAboutMe={scrollToAboutMe}
           scrollToProjects={scrollToProjects}
           scrollToContacts={scrollToContacts}
           scrollToEducation={scrollToEducation}
           clientViewHeight={clientViewHeight}
         />
-        <SpashText name={name}/>
+        <SpashText name={name} ref={navigateSpashTextRef}/>
       </div>
       <div className='about-me-view'>
-        <AboutMe ref={navigateAboutMeRef} orgName={orgName}/>
+        <AboutMe ref={navigateAboutMeRef} orgName={orgName} scrollToContacts={scrollToContacts}/>
       </div>
       <div className='projects-view'>
         <Projects ref={navigateProjectsRef} />

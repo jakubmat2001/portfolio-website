@@ -3,19 +3,19 @@ import { useState, useEffect } from "react";
 import ScrollAnimation from 'react-animate-on-scroll';
 import "./spashText.css"
 
-const SpashText = ({name, aboutMeViewHeight}) => {
+const SpashText = React.forwardRef((props, navigateSpashTextRef) => {
     const [displayText, setDisplayText] = useState("Sun")
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setDisplayText((currentText) => (currentText === "Sun" ? name : "Sun"));
+            setDisplayText((currentText) => (currentText === "Sun" ? props.name : "Sun"));
         }, 3150);
 
         return () => clearInterval(intervalId);
-    }, [name]);
+    }, [props.name]);
 
     return (
-        <div className="spashText-container">
+        <div ref={navigateSpashTextRef} className="spashText-container">
         <ScrollAnimation animateIn="fadeIn">
 
             <div className="text-container">
@@ -23,13 +23,11 @@ const SpashText = ({name, aboutMeViewHeight}) => {
                 <p>As</p>
                 <p key={displayText} id={displayText === "Sun" ? "spash-text-transistion-sun" : "spash-text-transistion-name"}><b>{displayText}</b></p>
                 <p>Rises</p>
-                <p>{aboutMeViewHeight}</p>
-
             </div>
+            
         </ScrollAnimation>
-
         </div>
     )
-}
+})
 
 export default SpashText;
