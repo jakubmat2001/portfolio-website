@@ -1,7 +1,55 @@
 import React from "react";
+import { useState } from "react";
 import "./requestGrades.css"
 
 const RequestGrades = ({ isModalOpen, toggleModal }) => {
+    const [email, setEmail] = useState("")
+    const [organisation, setOrganisation] = useState("")
+    const [empName, setEmpName] = useState("")
+    const [organisationType, setOrganisationType] = useState("")
+
+    const handleSubmit = () => {
+        fetch("http://localhost:3000/send-email", {
+            method: "post",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: empName,
+                email: email,
+                org: organisation,
+                orgType: organisationType
+            })
+            .then(res => console.log(res))
+        })
+    }
+
+    const onInputChange = (event) => {
+        const { name, value } = event.target;
+        switch (name) {
+          case "email":
+            setEmail(value);
+            console.log(email);
+            break;
+          case "organisation":
+            setOrganisation(value);
+            console.log(organisation);
+            break;
+          case "org-type":
+            setOrganisationType(value);
+            console.log(organisationType);
+            break;
+          case "name":
+            setEmpName(value);
+            console.log(empName);
+            break;
+          default:
+            console.log("nothing");
+        }
+      };
+
+
     return (
         <div className="request-grades-window">
             <div className="request-grades-container">
@@ -14,25 +62,25 @@ const RequestGrades = ({ isModalOpen, toggleModal }) => {
                     <div className="request-grades-input-container">
                         <div className="request-grades-input-position" id="request-grades-name">
                             <label className="request-grades-label">Name</label>
-                            <input placeholder="Name (Optional)"></input>
+                            <input onChange={onInputChange} id="name" name="name" placeholder="Name (Optional)"></input>
                         </div>
                     </div>
                     <div className="request-grades-input-container">
                         <div className="request-grades-input-position" id="request-grades-email">
                             <label className="request-grades-label">Email</label>
-                            <input placeholder="Email"></input>
+                            <input onChange={onInputChange} placeholder="Email" id="email" name="email"></input>
                         </div>
                     </div>
                     <div className="request-grades-input-container">
                         <div className="request-grades-input-position" id="request-grades-organisation">
                             <label className="request-grades-label">Organisation</label>
-                            <input placeholder="organisation"></input>
+                            <input onChange={onInputChange} placeholder="organisation" id="organisation" name="organisation"></input>
                         </div>
                     </div>
                     <div className="request-grades-input-container">
                         <div className="request-grades-input-position" id="request-grades-organisation-type">
                             <label className="request-grades-label">Organisation Type</label>
-                            <select id="request-grades-select" name="org-type">
+                            <select onChange={onInputChange} id="request-grades-select" name="org-type">
                                 <option value="org">Organisation</option>
                                 <option value="uni-col">University/College</option>
                                 <option value="family-friends">Family/Friends</option>
@@ -44,7 +92,7 @@ const RequestGrades = ({ isModalOpen, toggleModal }) => {
                 <div className="request-grades-submit-section">
                     <div className="request-grades-buttons">
                         <button onClick={toggleModal} id="request-grades-cancel">Cancel</button>
-                        <button id="request-grades-submit">Submit</button>
+                        <button onClick={() => handleSubmit} id="request-grades-submit">Submit</button>
                     </div>
                 </div>
             </div>

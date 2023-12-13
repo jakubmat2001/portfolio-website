@@ -38,7 +38,7 @@ const App = () => {
     }
     setTimeout(() => {
       setIsPopUpOpen(true)
-    }, 1500)
+    }, 1200)
   }, []);
 
   const scrollToSpashText = () => {

@@ -17,7 +17,7 @@ const Projects = React.forwardRef((props, ref) => {
             </div>
             <div className="project-panel-container">
                 <MDBCarousel showControls interval={8000}>
-                    <MDBCarouselItem itemId={1} interval={8000}>
+                    <MDBCarouselItem itemId={1}>
                         <img src={faceRecogn} id="project-images-fc" className='d-block w-100' alt='...' />
                         <div className="image-text">
                             <h5>N-Shine FaceRecogntion - Face Detection App </h5>
