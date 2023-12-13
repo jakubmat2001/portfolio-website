@@ -167,6 +167,12 @@
     }
 }
 
+@media only screen and (min-width: 1500px){
+    .pop-up-container {
+        width: 60%;
+    }
+}
+
 @keyframes slideInPopUp {
     0% {
         opacity: 0.01;

@@ -73,6 +73,11 @@
   margin: 5% 0 0 0;
 }
 
+#org-type-style {
+  width: 174px;
+  height: 22px;
+}
+
 #request-grades-hr {
   width: 100%;
   grid-column: 2 / span 4;

@@ -81,7 +81,7 @@ const App = () => {
     <div id='page-view-height' ref={clientWindowHeight}>
       {isRequestGradesOpen &&
         <Modal >
-          <RequestGrades toggleModal={toggleRequestGrades} />
+          <RequestGrades toggleRequestGrades={toggleRequestGrades} />
         </Modal>}
 
       {isPopUpOpen &&

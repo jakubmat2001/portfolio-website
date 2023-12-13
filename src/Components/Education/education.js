@@ -69,7 +69,8 @@ const Education = React.forwardRef((props, ref) => {
                     </div>
 
                     <div className="education-college-2-text">
-                        <p> A Final grade of <b>A</b> was achived due to the DocKeep application success for the final year's project </p>
+                        <p> A Final grade of <b>A</b> was achived due to the DocKeep application success for the final year's project. 
+                        <b> Note: Do not hesitate to click on request grades link in the contact-me section if unsure about accuracy of these results</b></p>
                     </div>
                     <div className="education-college-2-image">
                         <Tilt options={defaultOptions} style={{ height: 450, width: 300 }}>
