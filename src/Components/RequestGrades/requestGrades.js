@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./requestGrades.css"
 
-const RequestGrades = ({ isModalOpen, toggleRequestGrades }) => {
+const RequestGrades = (props) => {
     const [email, setEmail] = useState("")
     const [organisation, setOrganisation] = useState("")
     const [empName, setEmpName] = useState("")
@@ -12,12 +12,14 @@ const RequestGrades = ({ isModalOpen, toggleRequestGrades }) => {
         const EmailInputBox = document.getElementById("email");
         const OrgInputBox = document.getElementById("organisation");
         const NameInputBox = document.getElementById("name");
+        const OrgInputType = document.getElementById("org-type");
 
         const emailVal = EmailInputBox.value
         const organisationVal = OrgInputBox.value
         const nameVal = NameInputBox.value
+        const orgTypeVal = OrgInputType.value
 
-        const inputBoxArray = [emailVal, organisationVal, nameVal]
+        const inputBoxArray = [emailVal, organisationVal, orgTypeVal, nameVal]
 
         let hasEmptyField = false
 
@@ -32,6 +34,9 @@ const RequestGrades = ({ isModalOpen, toggleRequestGrades }) => {
                         OrgInputBox.style.border = "1px solid red"
                         break
                     case 2:
+                        OrgInputType.style.border = "1px solid red"
+                        break
+                    case 3:
                         setEmpName("None")
                         break
                     default:
@@ -46,9 +51,9 @@ const RequestGrades = ({ isModalOpen, toggleRequestGrades }) => {
         return false
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         if (inputValidation() === true) {
-            toggleRequestGrades()
+            props.toggleRequestGrades(e);
             fetch("http://localhost:3000/send-email", {
                 method: "post",
                 headers: {
@@ -61,33 +66,38 @@ const RequestGrades = ({ isModalOpen, toggleRequestGrades }) => {
                     org: organisation,
                     orgType: organisationType
                 })
-            }).then(
-                res => console.log(res)
-            ).catch(console.log)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.success) {
+                    console.log("Email sent successfully");
+                } else {
+                    console.log("Failed to send email");
+                }
+            })
+            .catch(error => {
+                console.error("Error sending email:", error);
+            });
         }
-    }
+    };
 
     const onInputChange = (event) => {
         const { name, value } = event.target;
         switch (name) {
             case "email":
                 setEmail(value);
-                console.log(email);
                 break;
             case "organisation":
                 setOrganisation(value);
-                console.log(organisation);
                 break;
             case "org-type":
                 setOrganisationType(value);
-                console.log(organisationType);
                 break;
             case "name":
                 setEmpName(value);
-                console.log(empName);
                 break;
             default:
-                console.log("nothing");
         }
     };
 
@@ -97,7 +107,7 @@ const RequestGrades = ({ isModalOpen, toggleRequestGrades }) => {
             <div className="request-grades-container">
                 <header className="request-grades-top-section">
                     <h5 id="request-grades-heading">Recipiant Information</h5>
-                    <a id="request-grades-exit" onClick={toggleRequestGrades} href="#">&Chi;</a>
+                    <a id="request-grades-exit" onClick={props.toggleRequestGrades} href="#">&Chi;</a>
                     <hr id="request-grades-hr" />
                 </header>
                 <main className="request-grades-main-content">
@@ -122,22 +132,20 @@ const RequestGrades = ({ isModalOpen, toggleRequestGrades }) => {
                     <div className="request-grades-input-container">
                         <div className="request-grades-input-position" id="request-grades-organisation-type">
                             <label className="request-grades-label">Organisation Type</label>
-                            <div id="org-type-style">
                                 <select onChange={onInputChange} id="org-type" name="org-type" >
+                                    <option value="" selected></option>
                                     <option value="org">Organisation</option>
                                     <option value="uni-col">University/College</option>
                                     <option value="family-friends">Family/Friends</option>
                                     <option value="other">Other</option>
                                 </select>
-                            </div>
-
                         </div>
                     </div>
                 </main>
                 <div className="request-grades-submit-section">
                     <div className="request-grades-buttons">
-                        <button onClick={toggleRequestGrades} id="request-grades-cancel">Cancel</button>
-                        <button onClick={() => handleSubmit()} id="request-grades-submit">Submit</button>
+                        <button onClick={props.toggleRequestGrades} id="request-grades-cancel">Cancel</button>
+                        <button onClick={(e) => handleSubmit(e)} id="request-grades-submit">Submit</button>
                     </div>
                 </div>
             </div>
