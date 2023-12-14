@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import Navigation from '../Components/Navigation/navigation';
-import SpashText from '../Components/SpashText/spashText';
-import AboutMe from '../Components/AboutMe/aboutMe';
-import Projects from '../Components/Projects/projects';
+import Navigation from '../Components/navigation/navigation';
+import SpashText from '../Components/spashText/spashText';
+import AboutMe from '../Components/aboutMe/aboutMe';
+import Projects from '../Components/projects/projects';
 import Education from '../Components/Education/education';
 import ContactMe from '../Components/ContactMe/contactMe';
 import Modal from "../Components/Modal/modal";

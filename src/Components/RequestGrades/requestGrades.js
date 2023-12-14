@@ -7,6 +7,7 @@ const RequestGrades = (props) => {
     const [organisation, setOrganisation] = useState("")
     const [empName, setEmpName] = useState("")
     const [organisationType, setOrganisationType] = useState("")
+    const [statusMsg, setStatusMsg] = useState("")
 
     const inputValidation = () => {
         const EmailInputBox = document.getElementById("email");
@@ -53,7 +54,6 @@ const RequestGrades = (props) => {
 
     const handleSubmit = (e) => {
         if (inputValidation() === true) {
-            props.toggleRequestGrades(e);
             fetch("http://localhost:3000/send-email", {
                 method: "post",
                 headers: {
@@ -71,9 +71,9 @@ const RequestGrades = (props) => {
             .then(data => {
                 console.log(data)
                 if (data.success) {
-                    console.log("Email sent successfully");
+                    displayStatusMsg("Successfully sent email to; jakubmatusik11@gmail.com", e)
                 } else {
-                    console.log("Failed to send email");
+                    displayStatusMsg("Something had gone wrong, please try again later", e)
                 }
             })
             .catch(error => {
@@ -100,6 +100,13 @@ const RequestGrades = (props) => {
             default:
         }
     };
+
+    const displayStatusMsg = (msg, e) => {
+        setStatusMsg(msg)
+        setTimeout(() => {
+            props.toggleRequestGrades(e)
+        }, 3000)
+    }
 
 
     return (
@@ -133,7 +140,7 @@ const RequestGrades = (props) => {
                         <div className="request-grades-input-position" id="request-grades-organisation-type">
                             <label className="request-grades-label">Organisation Type</label>
                                 <select onChange={onInputChange} id="org-type" name="org-type" >
-                                    <option value="" selected></option>
+                                    <option value="" defaultValue={""}></option>
                                     <option value="org">Organisation</option>
                                     <option value="uni-col">University/College</option>
                                     <option value="family-friends">Family/Friends</option>
@@ -142,6 +149,9 @@ const RequestGrades = (props) => {
                         </div>
                     </div>
                 </main>
+                <div className="request-grades-status-msg">
+                    <p>{statusMsg}</p>
+                </div>
                 <div className="request-grades-submit-section">
                     <div className="request-grades-buttons">
                         <button onClick={props.toggleRequestGrades} id="request-grades-cancel">Cancel</button>

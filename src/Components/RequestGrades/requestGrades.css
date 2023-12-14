@@ -73,6 +73,10 @@
   margin: 5% 0 0 0;
 }
 
+.request-grades-status-msg {
+  margin-top: 1rem;
+}
+
 #org-type-style {
   width: 174px;
   height: 22px;
