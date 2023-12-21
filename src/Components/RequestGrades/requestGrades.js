@@ -19,8 +19,11 @@ const RequestGrades = (props) => {
         const organisationVal = OrgInputBox.value
         const nameVal = NameInputBox.value
         const orgTypeVal = OrgInputType.value
+        if (nameVal === ''){
+            setEmpName("None")
+        }
 
-        const inputBoxArray = [emailVal, organisationVal, orgTypeVal, nameVal]
+        const inputBoxArray = [emailVal, organisationVal, orgTypeVal]
 
         let hasEmptyField = false
 
@@ -36,9 +39,6 @@ const RequestGrades = (props) => {
                         break
                     case 2:
                         OrgInputType.style.border = "1px solid red"
-                        break
-                    case 3:
-                        setEmpName("None")
                         break
                     default:
                         break

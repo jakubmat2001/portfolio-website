@@ -95,11 +95,15 @@
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .carousel-control-prev, .carousel-control-next {
+        height: 30%;
+    }
+}
 
-@media only screen and (max-width: 450px) {
-   
-    #project-images-fc, #project-images-dk {
-        max-height: 200px;
+@media only screen and (max-width: 350px) {
+    .carousel-control-prev, .carousel-control-next {
+        height: 20%;
     }
 }
 

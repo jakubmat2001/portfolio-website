@@ -75,6 +75,15 @@
 
 .request-grades-status-msg {
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.request-grades-status-msg p{
+  margin-top: 1rem;
+
+ text-align: center;
 }
 
 #org-type-style {
@@ -171,10 +180,6 @@
 }
 
 @media only screen and (max-width: 560px){
-  .request-grades-container{
-    height: 70%;
-  }
-
   .request-grades-main-content{
     display: flex;
     flex-direction: column;
