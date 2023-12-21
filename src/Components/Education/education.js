@@ -1,8 +1,8 @@
 import React from "react";
 import { Tilt } from 'react-tilt'
 import defaultOptions from "../../Utiliy/tiltOptions";
-import uniGradeSheet from "../../Images/UniGradeProfile.PNG"
-import uniAwardCert from "../../Images/UniAwardGrade.PNG"
+import uniGradeSheet from "../../Images/UniGradeProfile.png"
+import uniAwardCert from "../../Images/UniAwardGrade.png"
 import collegeAwardCert from "../../Images/CollegeDiploma.png"
 import collegeGradeSheet from "../../Images/CollegeGrades.png"
 import "./education.css"

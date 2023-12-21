@@ -1,5 +1,5 @@
 import React from "react";
-import selfie from "../../Images/selfie.JPEG"
+import selfie from "../../Images/selfie.jpeg"
 import './aboutMe.css'
 
 const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {

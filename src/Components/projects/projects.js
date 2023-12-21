@@ -1,8 +1,8 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
-import faceRecogn from "../../Images/FaceRecognitionProject.PNG"
-import QuoteCalculator from "../../Images/QuoteCalculator.PNG"
-import dockKeep from "../../Images/DK.PNG"
+import faceRecogn from "../../Images/FaceRecognitionProject.png"
+import QuoteCalculator from "../../Images/QuoteCalculator.png"
+import dockKeep from "../../Images/DK.png"
 
 import "./projects.css"
 
