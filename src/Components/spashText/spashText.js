@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import ScrollAnimation from 'react-animate-on-scroll';
 import "./spashText.css"
 
 const SpashText = React.forwardRef((props, navigateSpashTextRef) => {
@@ -16,7 +15,6 @@ const SpashText = React.forwardRef((props, navigateSpashTextRef) => {
 
     return (
         <div ref={navigateSpashTextRef} className="spashText-container">
-        <ScrollAnimation animateIn="fadeIn">
 
             <div className="text-container">
                 <p>Don't Fall Asleep</p>
@@ -24,8 +22,6 @@ const SpashText = React.forwardRef((props, navigateSpashTextRef) => {
                 <p key={displayText} id={displayText === "Sun" ? "spash-text-transistion-sun" : "spash-text-transistion-name"}><b>{displayText}</b></p>
                 <p>Rises</p>
             </div>
-            
-        </ScrollAnimation>
         </div>
     )
 })

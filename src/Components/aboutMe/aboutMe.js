@@ -1,6 +1,5 @@
 import React from "react";
 import selfie from "../../Images/selfie.JPEG"
-import ScrollAnimation from 'react-animate-on-scroll';
 import './aboutMe.css'
 
 const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
@@ -11,7 +10,6 @@ const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
     };
 
     return (
-        <ScrollAnimation animateIn="fadeIn">
         <div ref={navigateAboutMeRef} className="about-me-container">
             <div className='about-me-wrapper'>
                 <div className="about-me-left-container">
@@ -37,7 +35,6 @@ const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
                 </div>
             </div>
         </div>
-        </ScrollAnimation>
     )
 })
 

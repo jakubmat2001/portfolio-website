@@ -1,6 +1,5 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
-import ScrollAnimation from 'react-animate-on-scroll';
 import faceRecogn from "../../Images/FaceRecognitionProject.PNG"
 import QuoteCalculator from "../../Images/QuoteCalculator.PNG"
 import dockKeep from "../../Images/DK.PNG"
@@ -9,7 +8,6 @@ import "./projects.css"
 
 const Projects = React.forwardRef((props, ref) => {
     return (
-        <ScrollAnimation animateIn="fadeIn">
         <div ref={ref} className="project-container">
             <div className="project-title-container">
                 <div className="project-title-text">
@@ -53,7 +51,6 @@ const Projects = React.forwardRef((props, ref) => {
             </div>
            
         </div>
-        </ScrollAnimation>
     )
 })
 

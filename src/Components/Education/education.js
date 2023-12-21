@@ -1,5 +1,4 @@
 import React from "react";
-import ScrollAnimation from 'react-animate-on-scroll';
 import { Tilt } from 'react-tilt'
 import defaultOptions from "../../Utiliy/tiltOptions";
 import uniGradeSheet from "../../Images/UniGradeProfile.PNG"
@@ -13,7 +12,6 @@ import "./education.css"
 const Education = React.forwardRef((props, ref) => {
 
     return (
-        <ScrollAnimation animateIn="fadeIn">
             <div ref={ref} className="education-container">
                 <div className="education-title-container">
                     <p>Education</p>
@@ -80,7 +78,6 @@ const Education = React.forwardRef((props, ref) => {
                     </div>
                 </div>
             </div>
-        </ScrollAnimation>
     )
 })
 
