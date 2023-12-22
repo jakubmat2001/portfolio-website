@@ -54,7 +54,7 @@ const RequestGrades = (props) => {
 
     const handleSubmit = (e) => {
         if (inputValidation() === true) {
-            fetch("http://localhost:3000/send-email", {
+            fetch("https://portfolio-website-backend-c405ae064912.herokuapp.com/send-email", {
                 method: "post",
                 headers: {
                     "Accept": "application/json",
@@ -65,7 +65,7 @@ const RequestGrades = (props) => {
                     email: email,
                     org: organisation,
                     orgType: organisationType
-                })
+                }),
             })
             .then(res => res.json())
             .then(data => {
