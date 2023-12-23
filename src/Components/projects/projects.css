@@ -108,3 +108,9 @@
     }
 }
 
+
+@media only screen and (max-height: 700px) {
+    .project-container {
+      margin: 80% auto;
+    }
+   }

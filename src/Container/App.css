@@ -7,7 +7,7 @@
 
 .about-me-view {
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   display: flex;
   align-items: center;
 }
@@ -23,7 +23,7 @@
 .education-view {
   width: 100%;
   height: auto;
-
+  align-items: center;
   display: flex;
   justify-content: center;
   margin: 40% auto 0 auto;
@@ -72,7 +72,7 @@
  /* Height Media */
  @media only screen and (max-height: 700px) {
   .education-view {
-    margin: 120% auto 0 auto;
+    margin: 80% auto;
   }
  }
 

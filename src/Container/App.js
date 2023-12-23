@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Fade from 'react-reveal/Fade';
 
 import Navigation from '../Components/navigation/navigation';
 import SpashText from '../Components/spashText/spashText';
@@ -38,7 +39,7 @@ const App = () => {
     }
     setTimeout(() => {
       setIsPopUpOpen(true)
-    }, 1200)
+    }, 1500)
   }, []);
 
   const scrollToSpashText = () => {
@@ -66,7 +67,7 @@ const App = () => {
     setIsRequestGradesOpen(isRequestGradesOpen => !isRequestGradesOpen)
     e.preventDefault()
   }
-// Toggle the pop-up modal from closed/open => open/close anytime function triggers
+  // Toggle the pop-up modal from closed/open => open/close anytime function triggers
   const togglePopUp = (e) => {
     setIsPopUpOpen(isPopUpOpen => !isPopUpOpen)
     e.preventDefault()
@@ -83,7 +84,6 @@ const App = () => {
         <Modal >
           <RequestGrades toggleRequestGrades={toggleRequestGrades} />
         </Modal>}
-
       {isPopUpOpen &&
         <Modal>
           <PopUp togglePopUp={togglePopUp} handleChangeText={handleChangeText} />
@@ -97,16 +97,24 @@ const App = () => {
           scrollToEducation={scrollToEducation}
           clientViewHeight={clientViewHeight}
         />
-        <SpashText name={name} ref={navigateSpashTextRef}/>
+        <Fade top>
+          <SpashText name={name} ref={navigateSpashTextRef} />
+        </Fade>
       </div>
       <div className='about-me-view'>
-        <AboutMe ref={navigateAboutMeRef} orgName={orgName} scrollToContacts={scrollToContacts}/>
+        <Fade left>
+          <AboutMe ref={navigateAboutMeRef} orgName={orgName} scrollToContacts={scrollToContacts} />
+        </Fade>
       </div>
       <div className='projects-view'>
-        <Projects ref={navigateProjectsRef} />
+        <Fade right>
+          <Projects ref={navigateProjectsRef} />
+        </Fade>
       </div>
       <div className='education-view'>
-        <Education ref={navigateEducationRef} />
+      <Fade left>
+          <Education ref={navigateEducationRef} />
+      </Fade>
       </div>
       <div className='contact-view'>
         <ContactMe ref={navigateContactMeRef} toggleModal={toggleRequestGrades} />
