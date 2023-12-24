@@ -42,11 +42,10 @@
 @media only screen and (max-width: 1050px) {
   .about-me-view {
     height: auto;
-
   }
 
   .education-view {
-    margin: 70% auto 0 auto;
+    margin: 100% auto 0 auto;
   }
 
   .projects-view {

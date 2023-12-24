@@ -5,22 +5,20 @@ import "./popUp.css"
 const PopUp = ({togglePopUp, handleChangeText}) => {
     const [popUpInput, setPopUpInput] = useState('')
 
-    const focusInput = () => {
-        const inputBox = document.getElementById("pop-up-input")
-        inputBox.style.border = "1px solid red"
-
-    }
-
     const handlePopUpInput = (event) => {
         setPopUpInput(event.target.value);
     }
 
-    
     const handleSubmit = (event) => {
         if (popUpInput === ""){
             return focusInput()
         }
         return (handleChangeText(popUpInput), togglePopUp(event))
+    }
+
+    const focusInput = () => {
+        const inputBox = document.getElementById("pop-up-input")
+        inputBox.style.border = "1px solid red"
     }
 
 

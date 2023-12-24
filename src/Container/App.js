@@ -10,17 +10,20 @@ import ContactMe from '../Components/ContactMe/contactMe';
 import Modal from "../Components/Modal/modal";
 import RequestGrades from '../Components/RequestGrades/requestGrades'
 import PopUp from '../Components/PopUp/popUp';
+import DirectContact from '../Components/DirectContact/directContact';
 
 import "./App.css";
 import '../fonts/Comfortaa-Medium.ttf';
 
 const App = () => {
-  const [name] = useState("Jakub");
   const [clientViewHeight, setClientViewHeight] = useState(0);
-  const [aboutMeViewHeight, setAboutMeViewHeight] = useState(0);
-  const [isRequestGradesOpen, setIsRequestGradesOpen] = useState(false);
-  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const [name] = useState("Jakub");
   const [orgName, setOrgName] = useState('your company');
+  const [modalOpen, setModalOpen] = useState({
+    isRequestGradesOpen: false,
+    isDirectContactOpen: false,
+    isPopUpOpen: false
+  })
 
   const navigateSpashTextRef = useRef(null);
   const navigateAboutMeRef = useRef(null);
@@ -35,10 +38,9 @@ const App = () => {
   useEffect(() => {
     if (clientWindowHeight.current) {
       setClientViewHeight(clientWindowHeight.current.clientHeight);
-      setAboutMeViewHeight(navigateAboutMeRef.current.clientHeight);
     }
     setTimeout(() => {
-      setIsPopUpOpen(true)
+      setModalOpen({ isPopUpOpen: true })
     }, 1500)
   }, []);
 
@@ -64,13 +66,27 @@ const App = () => {
 
   // Toggle the grades modal from closed/open => open/close anytime function triggers
   const toggleRequestGrades = (e) => {
-    setIsRequestGradesOpen(isRequestGradesOpen => !isRequestGradesOpen)
-    e.preventDefault()
-  }
-  // Toggle the pop-up modal from closed/open => open/close anytime function triggers
+    setModalOpen((prevState) => ({
+      ...prevState,
+      isRequestGradesOpen: !prevState.isRequestGradesOpen
+    }));
+    e.preventDefault();
+  };
+
   const togglePopUp = (e) => {
-    setIsPopUpOpen(isPopUpOpen => !isPopUpOpen)
-    e.preventDefault()
+    setModalOpen((prevState) => ({
+      ...prevState,
+      isPopUpOpen: !prevState.isPopUpOpen
+    }));
+    e.preventDefault();
+  };
+
+  const toggleDirectContact = (e) => {
+    setModalOpen((prevState) => ({
+      ...prevState,
+      isDirectContactOpen: !prevState.isDirectContactOpen
+    }))
+    e.preventDefault();
   }
 
   // Changes text on the website from a popUp form input value
@@ -80,13 +96,17 @@ const App = () => {
 
   return (
     <div id='page-view-height' ref={clientWindowHeight}>
-      {isRequestGradesOpen &&
+      {modalOpen.isRequestGradesOpen &&
         <Modal >
           <RequestGrades toggleRequestGrades={toggleRequestGrades} />
         </Modal>}
-      {isPopUpOpen &&
+      {modalOpen.isPopUpOpen &&
         <Modal>
           <PopUp togglePopUp={togglePopUp} handleChangeText={handleChangeText} />
+        </Modal>}
+      {modalOpen.isDirectContactOpen &&
+        <Modal>
+          <DirectContact toggleDirectContact={toggleDirectContact}/>
         </Modal>}
       <div className='home-view'>
         <Navigation
@@ -112,12 +132,12 @@ const App = () => {
         </Fade>
       </div>
       <div className='education-view'>
-      <Fade left>
+        <Fade left>
           <Education ref={navigateEducationRef} />
-      </Fade>
+        </Fade>
       </div>
       <div className='contact-view'>
-        <ContactMe ref={navigateContactMeRef} toggleModal={toggleRequestGrades} />
+        <ContactMe ref={navigateContactMeRef} toggleRequestGrades={toggleRequestGrades} toggleDirectContact={toggleDirectContact} />
       </div>
     </div>
   );
