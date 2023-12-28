@@ -40,11 +40,15 @@ const ContactMe = React.forwardRef((props, ref) => {
                             </div>
 
                             <div className="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4">
-                                <h6 className="text-uppercase fw-bold">Grades</h6>
+                                <h6 className="text-uppercase fw-bold">Inquieries & More</h6>
                                 <hr className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: "60px", backgroundColor: "#7c4dff", height: "2px" }} />
                                 <p>
-                                    <a href="##" onClick={props.toggleModal} style={{color: "white", borderBottom: "solid white 2px"}}>Request Grades</a>
+                                    <a href="##" onClick={props.toggleRequestGrades} style={{color: "white", borderBottom: "solid white 2px"}}>Request Grades</a>
+                                </p>
+                                <br/>
+                                <p>
+                                    <a href="##" onClick={props.toggleDirectContact} style={{color: "white", borderBottom: "solid white 2px"}}>Direct Contact</a>
                                 </p>
                             </div>
 

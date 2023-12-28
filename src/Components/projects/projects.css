@@ -60,9 +60,10 @@
     position: absolute;
 }
 
-#project-images-fc, #project-images-dk {
+#project-images-fd, #project-images-dk, #project-images-qc {
     max-width: auto;
     max-height: 550px;
+    cursor: pointer;
 }
 
 .animated.fadeIn {
@@ -73,14 +74,14 @@
 
 @media only screen and (min-width: 1600px) {
    
-    #project-images-fc, #project-images-dk {
+    #project-images-fd, #project-images-dk, #project-images-qc {
         max-height: 700px;
     }
 }
 
 @media only screen and (max-width: 1250px) {
    
-    #project-images-fc, #project-images-dk {
+    #project-images-fd, #project-images-dk, #project-images-qc{
         max-height: 450px;
     }
 }
@@ -90,7 +91,7 @@
         width: 100%;
     }
 
-    #project-images-fc, #project-images-dk {
+    #project-images-fd, #project-images-dk, #project-images-qc {
         max-height: 300px;
     }
 }
@@ -107,3 +108,9 @@
     }
 }
 
+
+@media only screen and (max-height: 700px) {
+    .project-container {
+      margin: 80% auto;
+    }
+   }

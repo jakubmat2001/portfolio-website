@@ -7,10 +7,7 @@ import collegeAwardCert from "../../Images/CollegeDiploma.png"
 import collegeGradeSheet from "../../Images/CollegeGrades.png"
 import "./education.css"
 
-
-
 const Education = React.forwardRef((props, ref) => {
-
     return (
             <div ref={ref} className="education-container">
                 <div className="education-title-container">

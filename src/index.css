@@ -7,8 +7,8 @@ html, body{
 }
 
 body {
-    background: -moz-linear-gradient(0deg, rgba(192, 140, 67, 1) 0%, rgba(44, 44, 101, 1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(192, 140, 67, 1) 0%, rgba(44, 44, 101, 1) 100%);
+    background: -moz-linear-gradient(to bottom, #1D1A39,#1D1A39, #451952, #682549, #AE445A, #F39F5A, #E8BCB9);
+    background: -webkit-linear-gradient(to bottom, #1D1A39,#1D1A39, #451952, #682549, #AE445A, #F39F5A, #E8BCB9);
     background: linear-gradient(to bottom, #1D1A39,#1D1A39, #451952, #682549, #AE445A, #F39F5A, #E8BCB9);
     background-size: 100%;
     position: relative;

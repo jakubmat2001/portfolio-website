@@ -2,26 +2,33 @@ import React from "react";
 import { useState } from "react";
 import "./requestGrades.css"
 
-const RequestGrades = (props) => {
-    const [email, setEmail] = useState("")
-    const [organisation, setOrganisation] = useState("")
-    const [empName, setEmpName] = useState("")
-    const [organisationType, setOrganisationType] = useState("")
+const RequestGrades = ({toggleRequestGrades}) => {
+    const [formInputs, setFormInputs] = useState({
+        email: "",
+        empName: "",
+        organisation: "",
+        organisationType: ""
+    })
+
     const [statusMsg, setStatusMsg] = useState("")
 
     const inputValidation = () => {
         const EmailInputBox = document.getElementById("email");
         const OrgInputBox = document.getElementById("organisation");
-        const NameInputBox = document.getElementById("name");
+        const NameInputBox = document.getElementById("emp-name");
         const OrgInputType = document.getElementById("org-type");
 
         const emailVal = EmailInputBox.value
         const organisationVal = OrgInputBox.value
         const nameVal = NameInputBox.value
         const orgTypeVal = OrgInputType.value
-        if (nameVal === ''){
-            setEmpName("None")
-        }
+
+        console.log(`name ${nameVal}, org ${organisationVal}, email ${emailVal}, orgType: ${orgTypeVal}`)
+        console.log(`name formInput ${formInputs.empName}`)
+        console.log(`email formInput ${formInputs.email}`)
+        console.log(`org formInput ${formInputs.organisation}`)
+        console.log(`orgType formInput ${formInputs.organisationType}`)
+
 
         const inputBoxArray = [emailVal, organisationVal, orgTypeVal]
 
@@ -53,19 +60,20 @@ const RequestGrades = (props) => {
     }
 
     const handleSubmit = (e) => {
+        console.log(formInputs.empName)
         if (inputValidation() === true) {
-            fetch("http://localhost:3000/send-email", {
+            fetch("https://portfolio-website-backend-c405ae064912.herokuapp.com/request-grades", {
                 method: "post",
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    name: empName,
-                    email: email,
-                    org: organisation,
-                    orgType: organisationType
-                })
+                    name: formInputs.empName,
+                    email: formInputs.email,
+                    org: formInputs.organisation,
+                    orgType: formInputs.organisationType
+                }),
             })
             .then(res => res.json())
             .then(data => {
@@ -86,16 +94,28 @@ const RequestGrades = (props) => {
         const { name, value } = event.target;
         switch (name) {
             case "email":
-                setEmail(value);
+                setFormInputs((prevState) => ({
+                    ...prevState,
+                    email: value
+                }));
                 break;
             case "organisation":
-                setOrganisation(value);
+                setFormInputs((prevState) => ({
+                    ...prevState,
+                    organisation: value
+                }));
                 break;
             case "org-type":
-                setOrganisationType(value);
+                setFormInputs((prevState) => ({
+                    ...prevState,
+                    organisationType: value
+                }));
                 break;
-            case "name":
-                setEmpName(value);
+            case "emp-name":
+                setFormInputs((prevState) => ({
+                    ...prevState,
+                    empName: value
+                }));
                 break;
             default:
         }
@@ -104,24 +124,23 @@ const RequestGrades = (props) => {
     const displayStatusMsg = (msg, e) => {
         setStatusMsg(msg)
         setTimeout(() => {
-            props.toggleRequestGrades(e)
+            toggleRequestGrades(e)
         }, 3000)
     }
-
 
     return (
         <div className="request-grades-window">
             <div className="request-grades-container">
                 <header className="request-grades-top-section">
                     <h5 id="request-grades-heading">Recipiant Information</h5>
-                    <a id="request-grades-exit" onClick={props.toggleRequestGrades} href="#">&Chi;</a>
+                    <a id="request-grades-exit" onClick={toggleRequestGrades} href="#">&Chi;</a>
                     <hr id="request-grades-hr" />
                 </header>
                 <main className="request-grades-main-content">
                     <div className="request-grades-input-container">
                         <div className="request-grades-input-position" id="request-grades-name">
                             <label className="request-grades-label">Name</label>
-                            <input onChange={onInputChange} id="name" name="name" placeholder="Name (Optional)"></input>
+                            <input onChange={onInputChange} id="emp-name" name="emp-name" placeholder="Name (Optional)"></input>
                         </div>
                     </div>
                     <div className="request-grades-input-container">
@@ -154,7 +173,7 @@ const RequestGrades = (props) => {
                 </div>
                 <div className="request-grades-submit-section">
                     <div className="request-grades-buttons">
-                        <button onClick={props.toggleRequestGrades} id="request-grades-cancel">Cancel</button>
+                        <button onClick={toggleRequestGrades} id="request-grades-cancel">Cancel</button>
                         <button onClick={(e) => handleSubmit(e)} id="request-grades-submit">Submit</button>
                     </div>
                 </div>
