@@ -36,7 +36,7 @@ const Projects = React.forwardRef((props, ref) => {
                         <a href={imageLinks.faceRecogn} target="_blank" rel="noreferrer">
                             <img src={faceRecogn} id="project-images-fd" className='d-block w-100' alt='face-detection webapp snipet' /></a>
                         <div className="image-text">
-                            <h5>Face Detection Web-App - (Hosted Live) - (2023)</h5>
+                            <h5>Face Detection Web-App - (Dockerized) - (2023)</h5>
                             <p> Live hosted face recognition website with Signin/Register and <b>email verification </b> functionalites.
                                 Users are able to level-up their ranks as they submit more images with human faces on them earining them different emote
                                 for each new rank level.
@@ -50,7 +50,7 @@ const Projects = React.forwardRef((props, ref) => {
                         <a href={imageLinks.faceRecogn} target="_blank" rel="noreferrer">
                             <img src={faceRecogn2} id="project-images-fd" className='d-block w-100' alt='face-detection webapp snipet' /></a>
                         <div className="image-text">
-                            <h5>Face Detection Web-App - (Hosted Live) - (2023)</h5>
+                            <h5>Face Detection Web-App - (Dockerized) - (2023)</h5>
                             <p> Live hosted face recognition website with Signin/Register and <b>email verification </b> functionalites.
                                 Users are able to level-up their ranks as they submit more images with human faces on them earining them different emote
                                 for each new rank level.
