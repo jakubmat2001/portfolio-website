@@ -4,6 +4,7 @@
     margin-top: 3%;
     display: flex;
     justify-content: center;
+    background-color: #1D1A39;
     box-shadow: 10px 15px 59px 10px black;
 }
 
@@ -94,7 +95,7 @@
     }
 
     .my-profile-photo {
-        margin: 1rem;
+        margin: 20px;
     }
 }
 
@@ -102,7 +103,6 @@
 @media only screen and (max-width: 700px) {
     .about-me-right-container {
         width: 70%;
-        margin-bottom: 2rem;
     }
 
     .about-me-container{

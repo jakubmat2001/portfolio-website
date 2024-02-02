@@ -1,13 +1,12 @@
 .project-container {
-    width: 80%;
+    width: 100%;
     height: auto;
     margin: 0 auto; 
     display: flex;
+    background-color: #C0C0C0;
     flex-direction: column;
     align-items: center;
-    box-shadow: 10px 15px 59px 10px black;
     font-family: 'Medium', sans-serif;
-    border-radius: 2rem;
 }
 
 /* Top section */
@@ -29,7 +28,7 @@
 
 /* Mid Section */
 .project-panel-container {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +61,7 @@
 
 #project-images-fd, #project-images-dk, #project-images-qc {
     max-width: auto;
-    max-height: 550px;
+    max-height:90vh;
     cursor: pointer;
 }
 

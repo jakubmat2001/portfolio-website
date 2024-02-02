@@ -1,10 +1,9 @@
 .education-container {
-    width: 80%;
-    height: 100%;
-    box-shadow: 10px 15px 59px 10px black;
+    width: 100%;
+    height: auto;
     display: flex;
+    background-color: #1D1A39;
     flex-direction: column;
-    border-radius: 2rem;
     margin: auto ;
 }
 
