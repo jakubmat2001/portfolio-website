@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Fade from 'react-reveal/Fade';
 import { MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
 import faceRecogn from "../../Images/FaceRecognitionProject.png"
 import faceRecogn2 from "../../Images/FaceRecognitionProject-2.png"
@@ -25,11 +26,14 @@ const Projects = React.forwardRef((props, ref) => {
 
     return (
         <div ref={ref} className="project-container">
+            <Fade right>
             <div className="project-title-container">
                 <div className="project-title-text">
                     <p>PROJECTS</p>
                 </div>
             </div>
+            </Fade>
+            <Fade left>
             <div className="project-panel-container">
                 <MDBCarousel showControls interval={8000}>
                     <MDBCarouselItem itemId={1}>
@@ -102,7 +106,7 @@ const Projects = React.forwardRef((props, ref) => {
                     </MDBCarouselItem>
                 </MDBCarousel>
             </div>
-
+            </Fade>
         </div>
     )
 })
