@@ -23,13 +23,6 @@ const RequestGrades = ({toggleRequestGrades}) => {
         const nameVal = NameInputBox.value
         const orgTypeVal = OrgInputType.value
 
-        console.log(`name ${nameVal}, org ${organisationVal}, email ${emailVal}, orgType: ${orgTypeVal}`)
-        console.log(`name formInput ${formInputs.empName}`)
-        console.log(`email formInput ${formInputs.email}`)
-        console.log(`org formInput ${formInputs.organisation}`)
-        console.log(`orgType formInput ${formInputs.organisationType}`)
-
-
         const inputBoxArray = [emailVal, organisationVal, orgTypeVal]
 
         let hasEmptyField = false

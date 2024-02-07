@@ -6,11 +6,11 @@ import SpashText from '../Components/spashText/spashText';
 import AboutMe from '../Components/aboutMe/aboutMe';
 import Projects from '../Components/projects/projects';
 import Education from '../Components/Education/education';
-import ContactMe from '../Components/ContactMe/contactMe';
+import ContactMe from '../Components/contactMe/contactMe';
 import Modal from "../Components/Modal/modal";
-import RequestGrades from '../Components/RequestGrades/requestGrades'
-import PopUp from '../Components/PopUp/popUp';
-import DirectContact from '../Components/DirectContact/directContact';
+import RequestGrades from '../Components/requestGrades/requestGrades'
+import PopUp from '../Components/popUp/popUp';
+import DirectContact from '../Components/directContact/directContact';
 
 import "./App.css";
 import '../fonts/Comfortaa-Medium.ttf';
@@ -122,19 +122,13 @@ const App = () => {
         </Fade>
       </div>
       <div className='about-me-view'>
-        <Fade left>
           <AboutMe ref={navigateAboutMeRef} orgName={orgName} scrollToContacts={scrollToContacts} />
-        </Fade>
       </div>
       <div className='projects-view'>
-        <Fade right>
           <Projects ref={navigateProjectsRef} />
-        </Fade>
       </div>
       <div className='education-view'>
-        <Fade left>
           <Education ref={navigateEducationRef} />
-        </Fade>
       </div>
       <div className='contact-view'>
         <ContactMe ref={navigateContactMeRef} toggleRequestGrades={toggleRequestGrades} toggleDirectContact={toggleDirectContact} />

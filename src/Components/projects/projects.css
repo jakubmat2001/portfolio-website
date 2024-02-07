@@ -60,16 +60,17 @@
     color: black !important;
 }
 
-#project-images-fd, #project-images-dk, #project-images-qc {
-    max-width: auto;
-    max-height:90vh;
-    cursor: pointer;
-}
 
 .animated.fadeIn {
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+#project-images-fd, #project-images-dk, #project-images-qc {
+    max-width: auto;
+    max-height:90vh;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 1600px) {

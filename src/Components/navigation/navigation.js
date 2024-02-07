@@ -26,7 +26,7 @@ const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrol
 
     // Hide the navigation shadow effect if user is at the very top of the webpage
     const shadowEffect = () => {
-        window.scrollY === 0 ? setRemoveShadow(true) : setRemoveShadow(false)
+        window.scrollY <= 100 ? setRemoveShadow(true) : setRemoveShadow(false)
     }
 
     const handleScrollToSpashText = (e) => {
@@ -59,7 +59,7 @@ const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrol
         <div className={`brand-and-navigation-container ${showNav ? 'visible' : 'hidden'}`}
             style={{ boxShadow: removeShadow ? 'none' : '0px 8px 10px -5px rgba(0, 0, 0, 0.5)' }}>
             <div className="brand-name-container">
-                <p id="navigation-logo-text" onClick={handleScrollToSpashText}>N-Shine</p>
+                <p id="navigation-logo-text" onClick={handleScrollToSpashText}>J.Matusik</p>
             </div>
 
             <div className="navigation-container">
