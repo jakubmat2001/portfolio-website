@@ -7,9 +7,7 @@ html, body{
 }
 
 body {
-    background: -moz-linear-gradient(to bottom, #1D1A39,#1D1A39, #451952, #682549, #AE445A, #F39F5A, #E8BCB9);
-    background: -webkit-linear-gradient(to bottom, #1D1A39,#1D1A39, #451952, #682549, #AE445A, #F39F5A, #E8BCB9);
-    background: linear-gradient(to bottom, #1D1A39,#1D1A39, #451952, #682549, #AE445A, #F39F5A, #E8BCB9);
+    background-color: #1D1A39;
     background-size: 100%;
     position: relative;
     background-attachment: fixed;

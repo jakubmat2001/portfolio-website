@@ -1,8 +1,9 @@
 .spashText-container {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
+    background-image: url("../../Images/triangles.png");
 }
 
 .text-container{
@@ -15,7 +16,6 @@
 .text-container p {
     margin: 0;
     color: white;
-    
 }
 
 #spash-text-transistion-sun {

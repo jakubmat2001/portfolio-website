@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Fade from 'react-reveal/Fade';
 
 import Navigation from '../Components/navigation/navigation';
 import SpashText from '../Components/spashText/spashText';
@@ -117,9 +116,7 @@ const App = () => {
           scrollToEducation={scrollToEducation}
           clientViewHeight={clientViewHeight}
         />
-        <Fade top>
           <SpashText name={name} ref={navigateSpashTextRef} />
-        </Fade>
       </div>
       <div className='about-me-view'>
           <AboutMe ref={navigateAboutMeRef} orgName={orgName} scrollToContacts={scrollToContacts} />

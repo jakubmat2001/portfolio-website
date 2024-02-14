@@ -45,9 +45,8 @@ const Education = React.forwardRef((props, ref) => {
 
                 <Fade left>
                     <div className="education-uni-2-text">
-                        <p> Factors like full-time employment to support myself and lack of student loans contributed to achiving lower grade potential then as planned such as a <b>B</b> in my honours. It hasn't helped that I tend to be overly ambitious with my projects (more on that during the interview) and more ofthen then not I come up with projects ideas that could serve me in the future such as a DocKeep project for my college HND course which
-                            I achived an <b>A</b> in. Still remebering my previous success with DocKeep, I felt confident I could replicate that success with Forex-Article-Sentiment-Analyzer (Honours Project). In the end a <b>C</b> grade was achived which yielded an end
-                            result of <b>2:2</b> in honours grade.
+                        <p> In the end I margininaly missed the 2:1 grade and achived<br/><br/>
+                        Bachelor Of Science w/ 2:2 Honours <br/>In Computer Software Development
                         </p>
                     </div>
                 </Fade>

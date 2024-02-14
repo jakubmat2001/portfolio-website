@@ -57,7 +57,7 @@ const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrol
 
     return (
         <div className={`brand-and-navigation-container ${showNav ? 'visible' : 'hidden'}`}
-            style={{ boxShadow: removeShadow ? 'none' : '0px 8px 10px -5px rgba(0, 0, 0, 0.5)' }}>
+            style={{ boxShadow: removeShadow ? 'none' : 'none' }}>
             <div className="brand-name-container">
                 <p id="navigation-logo-text" onClick={handleScrollToSpashText}>J.Matusik</p>
             </div>
