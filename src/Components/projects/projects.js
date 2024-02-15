@@ -70,7 +70,7 @@ const Projects = React.forwardRef((props, ref) => {
                         <div className="image-text">
                             <h5 className="text-colour">Quote Calculator Website - (Dockerized) - (2023)</h5>
                             <p className="text-colour"> Website utilizing <b>SSR</b> for better searchability, with <b>MongoDB</b> database for managing data & user sessions. Content on a
-                                website can be accessed without a user sign-in, however they won't be able to add/modify/delete their quotes for any given project untill loged into their own account. Each user can create only one quote per project entering inputs such as: hours, expariance, human-resources to calculate final budget. Random fudgefactor is added in and multiplied by budget to prevent reverse engerning the real budget by another project bidder.
+                                website can be accessed without a user sign-in, however they won't be able to add/modify/delete their quotes for any given project untill loged into their own account. Each user can create only one quote per project, entering inputs such as: hours, experiance, human-resources to calculate final budget. Random fudgefactor is added in and multiplied by the budget to prevent reverse engerning the real budget by another project bidder.
                             </p>
                         </div>
                     </MDBCarouselItem>
@@ -80,7 +80,7 @@ const Projects = React.forwardRef((props, ref) => {
                         <div className="image-text">
                             <h5 className="text-colour">Quote Calculator Website - (Dockerized) - (2023)</h5>
                             <p className="text-colour"> Website utilizing <b>SSR</b> for better searchability, with <b>MongoDB</b> database for managing data & user sessions. Content on a
-                                website can be accessed without a user sign-in, however they won't be able to add/modify/delete their quotes for any given project untill loged into their own account. Each user can create only one quote per project entering inputs such as: hours, expariance, human-resources to calculate final budget. Random fudgefactor is added in and multiplied by budget to prevent reverse engerning the real budget by another project bidder.
+                                website can be accessed without a user sign-in, however they won't be able to add/modify/delete their quotes for any given project untill loged into their own account. Each user can create only one quote per project entering, inputs such as: hours, experiance, human-resources to calculate final budget. Random fudgefactor is added in and multiplied by the budget to prevent reverse engerning the real budget by another project bidder.
                             </p>
                         </div>
                     </MDBCarouselItem>
@@ -90,7 +90,7 @@ const Projects = React.forwardRef((props, ref) => {
                         <div className="image-text">
                             <h5 className="text-colour">Forex Trade Documentation App - Deployable Software - (2023)</h5>
                             <p className="text-colour">Installable and deployable forex trade documentation app. Allowing forex a.k.a currency traders to file their trades
-                                into an excel spread-sheets with details of each trade such as; traded pair, lot-size, open (price at a time of placing a trade), close (price at a time of closing a trade), profit/loss (calucated amout of gained/lost money for trade), and <b>Chart Images</b> (if any), allowing users to analyze before and after result for each trade on 3 diffrent timeframes of <b>(15m, 1h ,4h)</b>
+                                into an excel spread-sheets with details of each trade, such as; traded pair, lot-size, open (price at a time of placing a trade), close (price at a time of closing a trade), profit/loss (calucated amout of gained/lost money for that trade), and <b>Chart Images</b> (if any), allowing users to analyze before and after result for each trade on 3 different timeframes of <b>(15m, 1h ,4h)</b>
                             </p>
                         </div>
                     </MDBCarouselItem>
@@ -100,7 +100,7 @@ const Projects = React.forwardRef((props, ref) => {
                         <div className="image-text">
                             <h5 className="text-colour">Forex Trade Documentation App - Deployable Software - (2021)</h5>
                             <p className="text-colour">Installable and deployable forex trade documentation app. Allowing forex a.k.a currency traders to file their trades
-                                into an excel spread-sheets with details of each trade such as; traded pair, lot-size, open (price at a time of placing a trade), close (price at a time of closing a trade), profit/loss (calucated amout of gained/lost money for trade), and <b>Chart Images</b> (if any), allowing users to analyze before and after result for each trade on 3 diffrent timeframes of <b>(15m, 1h ,4h)</b>
+                                into an excel spread-sheets with details of each trade, such as; traded pair, lot-size, open (price at a time of placing a trade), close (price at a time of closing a trade), profit/loss (calucated amout of gained/lost money for that trade), and <b>Chart Images</b> (if any), allowing users to analyze before and after result for each trade on 3 different timeframes of <b>(15m, 1h ,4h)</b>
                             </p>
                         </div>
                     </MDBCarouselItem>

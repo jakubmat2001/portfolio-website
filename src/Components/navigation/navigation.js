@@ -1,33 +1,45 @@
-import {React, useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import './navigation.css'
 import '../../fonts/Comfortaa-Medium.ttf'
 
-const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrollToContacts, scrollToEducation, clientViewHeight }) => {
-    const [lastScrollY, setScrollY] = useState(0)
+const Navigation = ({ scrollToSpashText, scrollToAboutMe, scrollToProjects, scrollToContacts, scrollToEducation, clientViewHeight }) => {
     const [showNav, setShowNav] = useState(true)
-    const [removeShadow, setRemoveShadow] = useState(false)
+    const [scrollWindow, setScrollWindow] = useState({
+        y: 0,
+        lastY: 0
+    })
+
 
     useEffect(() => {
-        shadowEffect()
-        window.addEventListener('scroll', navControl);
-        // Removing event listener for scroll, improves performance and prevents memory leakage
-        return () => {
-            window.removeEventListener('scroll', navControl);
-        };
-    }, [lastScrollY]);
+        const handleScroll = () => {
+            setScrollWindow(prevState => {
+                return {
+                    y: window.scrollY,
+                    lastY: prevState.y
+                }
+            })
+        }
 
-    // Shows navigation when user scrolls down a page and hides it when they scroll up
-    const navControl = () => {
-        window.addEventListener("scroll", () => {
-            lastScrollY < window.scrollY ? setShowNav(false) : setShowNav(true)
-            setScrollY(window.scrollY)
-        });
-    }
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+        
+    }, [])
 
-    // Hide the navigation shadow effect if user is at the very top of the webpage
-    const shadowEffect = () => {
-        window.scrollY <= 100 ? setRemoveShadow(true) : setRemoveShadow(false)
-    }
+    useEffect(() => {
+        if (scrollWindow.y > 100){
+            setShowNav(true)
+        }else {
+            setShowNav(false)
+        }
+
+        if (scrollWindow.y > scrollWindow.lastY){
+            setShowNav(true)
+        }else {
+            setShowNav(false)
+        }
+
+    }, [scrollWindow])
+
 
     const handleScrollToSpashText = (e) => {
         e.preventDefault();
@@ -35,29 +47,28 @@ const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrol
     }
 
     const handleClickAbout = (e) => {
-        e.preventDefault();  
+        e.preventDefault();
         scrollToAboutMe();
     };
 
     const handleClickProjects = (e) => {
-        e.preventDefault();  
+        e.preventDefault();
         scrollToProjects();
     };
 
     const handleClickEducation = (e) => {
-        e.preventDefault();  
+        e.preventDefault();
         scrollToEducation();
     };
 
     const handleClickContact = (e) => {
-        e.preventDefault();  
+        e.preventDefault();
         scrollToContacts();
     };
 
 
     return (
-        <div className={`brand-and-navigation-container ${showNav ? 'visible' : 'hidden'}`}
-            style={{ boxShadow: removeShadow ? 'none' : 'none' }}>
+        <div className={`brand-and-navigation-container ${showNav ? "hidden" : "visible"}`}>
             <div className="brand-name-container">
                 <p id="navigation-logo-text" onClick={handleScrollToSpashText}>J.Matusik</p>
             </div>

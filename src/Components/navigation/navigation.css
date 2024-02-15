@@ -1,22 +1,22 @@
 
 .brand-and-navigation-container.visible{
     display: flex;
-    width: 100vw;
-    height: 10vh;
+    width: 100%;
+    height: auto;
+    top: 0;
     justify-content: space-between;
     position: fixed;
-    background-color: none;
-    font-family: 'Medium', sans-serif;
+    align-items: center;
     font-style: normal;
     font-weight: 100;
-    transition: transform 0.2s ; 
-    align-items: center;
+    font-family: 'Medium', sans-serif;
+    box-shadow: inset 0 35px 13px rgba(14,12,22,.85);
+    transition: transform 0.3s ease-in ; 
     z-index: 1;
 }
 
 .brand-and-navigation-container.hidden{
-    transform: translateY(-100%); 
-    z-index: 1;
+    transform: translateY(-100%);
 }
 
 .brand-name-container {
