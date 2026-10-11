@@ -1,4 +1,3 @@
-import React from "react";
 import selfie from "../../Images/selfie.png"
 import './aboutMe.css'
 
