@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import "./popUp.css"
 
@@ -20,7 +19,6 @@ const PopUp = ({togglePopUp, handleChangeText}) => {
         const inputBox = document.getElementById("pop-up-input")
         inputBox.style.border = "1px solid red"
     }
-
 
     return (
         <div className="pop-up-window">

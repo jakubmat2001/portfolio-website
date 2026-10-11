@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./contactMe.css"
 
 const ContactMe = React.forwardRef((props, ref) => {
@@ -27,25 +27,23 @@ const ContactMe = React.forwardRef((props, ref) => {
                 </section>
 
                 <section>
-                    <div className="container text-center text-md-start mt-5">
-                        <div className="row mt-3">
+                    <div className="container text-center text-md-start mt-5 mb-3">
+                        <div className="row ">
                             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                                <h6 className="text-uppercase fw-bold">N-Shine</h6>
+                                <h6 className="text-uppercase fw-bold">Developed By JM</h6>
                                 <hr
-                                    className="mb-4 mt-0 d-inline-block mx-auto"
+                                    className="mb-4 mt-0 d-inline-block mx-auto w-75"
                                     style={{ width: "60px", backgroundColor: "#7c4dff", height: "2px" }} />
                                 <p>
-                                    Helping new developers shine as hard as they can
+                                    Personal skill expression convayed by this portfolio do not represent my full potential,
+                                    this is especially true after gaining substantial experience at work.
                                 </p>
                             </div>
 
                             <div className="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4">
                                 <h6 className="text-uppercase fw-bold">Inquieries & More</h6>
-                                <hr className="mb-4 mt-0 d-inline-block mx-auto"
+                                <hr className="mb-4 mt-0 d-inline-block mx-auto w-100"
                                     style={{ width: "60px", backgroundColor: "#7c4dff", height: "2px" }} />
-                                <p>
-                                    <a href="##" onClick={props.toggleRequestGrades} style={{color: "white", borderBottom: "solid white 2px"}}>Request Grades</a>
-                                </p>
                                 <br/>
                                 <p>
                                     <a href="##" onClick={props.toggleDirectContact} style={{color: "white", borderBottom: "solid white 2px"}}>Direct Contact</a>
@@ -55,11 +53,11 @@ const ContactMe = React.forwardRef((props, ref) => {
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                                 <h6 className="text-uppercase fw-bold">Contact</h6>
                                 <hr
-                                    className="mb-4 mt-0 d-inline-block mx-auto"
+                                    className="mb-4 mt-0 d-inline-block mx-auto w-50"
                                     style={{ width: "60px", backgroundColor: "#7c4dff", height: "2px" }} />
-                                <p><i className="fas fa-home mr-3"></i> Aberdeen, 8a Mount Street, AB25 2RB</p>
-                                <p><i className="fas fa-envelope mr-3"></i> jakubmatusik11@gmail.com</p>
-                                <p><i className="fas fa-phone mr-3"></i> +44 0798 3570 285</p>
+                                <p><i className="fas fa-home mr-3"></i> Aberdeen, 45d Esslemont Avenue, AB25 1SX</p>
+                                <p className="pt-2"><i className="fas fa-envelope mr-3"></i> jakubmatusik11@gmail.com</p>
+                                <p className="pt-1"><i className="fas fa-phone mr-3"></i> +44 0798 3570 285</p>
                             </div>
                         </div>
                     </div>
@@ -68,8 +66,7 @@ const ContactMe = React.forwardRef((props, ref) => {
                 <div
                     className="text-center p-3"
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                    © 2023 Copyright:
-                    <a className="text-white" href="https://mdbootstrap.com/"> <b>N-Shine</b></a>
+                    © 2026 Copyright
                 </div>
             </footer>
         </div >

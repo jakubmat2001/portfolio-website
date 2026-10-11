@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 import Navigation from '../Components/navigation/navigation';
 import SpashText from '../Components/spashText/spashText';
 import AboutMe from '../Components/aboutMe/aboutMe';
-import Projects from '../Components/projects/projects';
+import Projects from '../Components/Projects/Projects';
 import Education from '../Components/Education/education';
 import ContactMe from '../Components/ContactMe/contactMe';
 import Modal from "../Components/Modal/modal";
@@ -14,10 +14,11 @@ import DirectContact from '../Components/DirectContact/directContact';
 
 import "./App.css";
 import '../fonts/Comfortaa-Medium.ttf';
+import WorkExperience from '../Components/WorkExperience/WorkExperience';
 
 const App = () => {
   const [clientViewHeight, setClientViewHeight] = useState(0);
-  const [name] = useState("Jakub");
+  const [name] = useState("Visitor");
   const [orgName, setOrgName] = useState('your company');
   const [modalOpen, setModalOpen] = useState({
     isRequestGradesOpen: false,
@@ -30,8 +31,9 @@ const App = () => {
   const navigateProjectsRef = useRef(null);
   const navigateEducationRef = useRef(null);
   const navigateContactMeRef = useRef(null);
+  const navigateWorkRef = useRef(null);
 
-  // Future dev: Using the height of the client, get the height of individual components 
+  // TODO Using the height of the client, get the height of individual components 
   // and use them to determine when the viewport switches from one to the other
   const clientWindowHeight = useRef(null)
 
@@ -64,7 +66,10 @@ const App = () => {
     navigateEducationRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Toggle the grades modal from closed/open => open/close anytime function triggers
+  const scrollToWork = () => {
+    navigateWorkRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const toggleRequestGrades = (e) => {
     setModalOpen((prevState) => ({
       ...prevState,
@@ -87,12 +92,11 @@ const App = () => {
       isDirectContactOpen: !prevState.isDirectContactOpen
     }))
     e.preventDefault();
-  }
+  };
 
-  // Changes text on the website from a popUp form input value
   const handleChangeText = (text) => {
     setOrgName(text);
-  }
+  };
 
   return (
     <div id='page-view-height' ref={clientWindowHeight}>
@@ -106,7 +110,7 @@ const App = () => {
         </Modal>}
       {modalOpen.isDirectContactOpen &&
         <Modal>
-          <DirectContact toggleDirectContact={toggleDirectContact}/>
+          <DirectContact toggleDirectContact={toggleDirectContact} />
         </Modal>}
       <div className='home-view'>
         <Navigation
@@ -115,6 +119,7 @@ const App = () => {
           scrollToProjects={scrollToProjects}
           scrollToContacts={scrollToContacts}
           scrollToEducation={scrollToEducation}
+          scrollToWork={scrollToWork}
           clientViewHeight={clientViewHeight}
         />
         <Fade top>
@@ -124,6 +129,11 @@ const App = () => {
       <div className='about-me-view'>
         <Fade left>
           <AboutMe ref={navigateAboutMeRef} orgName={orgName} scrollToContacts={scrollToContacts} />
+        </Fade>
+      </div>
+      <div className='work-experience-view'>
+        <Fade>
+          <WorkExperience ref={navigateWorkRef}/>
         </Fade>
       </div>
       <div className='projects-view'>

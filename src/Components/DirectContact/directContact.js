@@ -12,6 +12,7 @@ const DirectContact = ({toggleDirectContact}) => {
         return true
     }
 
+    //TODO Move the fetch request to an .env or better, create backend route to handle this request
     const handleSubmit = (e) => {
         if (inputValidation() === true) {
             fetch("https://portfolio-website-backend-c405ae064912.herokuapp.com/send-mail", {

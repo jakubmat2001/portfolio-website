@@ -2,7 +2,7 @@ import {React, useState, useEffect } from "react";
 import './navigation.css'
 import '../../fonts/Comfortaa-Medium.ttf'
 
-const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrollToContacts, scrollToEducation, clientViewHeight }) => {
+const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrollToContacts, scrollToEducation, scrollToWork ,clientViewHeight }) => {
     const [lastScrollY, setScrollY] = useState(0)
     const [showNav, setShowNav] = useState(true)
     const [removeShadow, setRemoveShadow] = useState(false)
@@ -10,7 +10,6 @@ const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrol
     useEffect(() => {
         shadowEffect()
         window.addEventListener('scroll', navControl);
-        // Removing event listener for scroll, improves performance and prevents memory leakage
         return () => {
             window.removeEventListener('scroll', navControl);
         };
@@ -54,18 +53,24 @@ const Navigation = ({scrollToSpashText, scrollToAboutMe, scrollToProjects, scrol
         scrollToContacts();
     };
 
+    const handleClickWork = (e) => {
+        e.preventDefault();
+        scrollToWork();
+    }
+
 
     return (
         <div className={`brand-and-navigation-container ${showNav ? 'visible' : 'hidden'}`}
             style={{ boxShadow: removeShadow ? 'none' : '0px 8px 10px -5px rgba(0, 0, 0, 0.5)' }}>
             <div className="brand-name-container">
-                <p id="navigation-logo-text" onClick={handleScrollToSpashText}>N-Shine</p>
+                <p id="navigation-logo-text" onClick={handleScrollToSpashText}>Portfolio</p>
             </div>
 
             <div className="navigation-container">
                 <nav className="navigation">
                     <ul>
                         <li onClick={handleClickAbout}><a href="about">About Me</a></li>
+                        <li onClick={handleClickWork}><a href="work">Work Experience</a></li>
                         <li onClick={handleClickProjects}><a href="projects">Projects</a></li>
                         <li onClick={handleClickEducation}><a href="education">Education</a></li>
                         <li onClick={handleClickContact}><a href="contact-me">Contact Me</a></li>

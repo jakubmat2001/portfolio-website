@@ -1,0 +1,45 @@
+
+#work-experience-body {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     margin: auto;
+}
+
+#work-images-fd {
+    max-width: auto;
+    max-height: 550px;
+    cursor: pointer;
+}
+
+.carousel-text-container {
+     width: 100%;
+     background-color: black;
+}
+
+.work-experience-container {
+     width: 100%;
+     height: auto;
+     display: flex;
+     justify-content: center;
+     box-shadow: 10px 15px 59px 10px black;
+}
+
+.work-experience-wrapper {
+     width: 100%;
+     padding: 3rem;
+     display: flex;
+}
+
+.work-experience-header {
+     display:flex;
+     align-content: center;
+     margin: 1rem auto;
+     padding: 1rem 0rem;
+}
+
+.work-experience-content {
+     width: 100%;
+     margin: auto;
+     padding: 0 1rem;
+}

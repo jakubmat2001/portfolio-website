@@ -1,5 +1,5 @@
 import React from "react";
-import selfie from "../../Images/selfie.jpeg"
+import selfie from "../../Images/selfie.png"
 import './aboutMe.css'
 
 const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
@@ -17,14 +17,7 @@ const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
                         <p>Hey, Welcome</p>
 
                         <h2><b>I'm Jakub Matusik</b></h2>
-                        <p>A fresh 2023's Robert Gordon University graduate, with over 6 months of perfecting his craft in Fullstack development & Software.
-                            I went an extra mile through expanding my knowladge and gained new skillsets by completing paid online courses such as: ZTM & Codeacademy. Capable of finding solutions to many difficult problems encountered when developing
-                            three of my projects, while still improving them with new ideas & features. After overcomming my impostor syndrom, I've regained my confidance and belive to be ready by brigning alot of value to <b>{props.orgName}</b> by being self sufficiant developer and having skillset edge over other fresh graduates. <br/><br/>Possessing ranging knowladge in domains such as; <b>React</b>, <b>JS</b>, <b>Python</b>, <b>Node</b>, <b>Docker</b>, <b>PostgreSQL</b>, <b>Express</b>, <b>MongoDB</b>, <b>Redis</b>, <b>Restful API's</b>, <b>AWS Lambda</b>, <b>AWS S3 Bucket</b>, <b>Git</b>, <b>NLP - Natural Language Processing</b>, <b>Unit Testing</b>, 
-                            <b> CSS + Responsive Web Design</b>
-                            <br /><br />
-                            In the future I plan to grow into a loyal Senior devloper at your company, as I often find
-                            myself commiting to one workpace for 3+ years. They say loyality is a halt to your progress in life, I on the other hand
-                            belive it is the best way to develop greater understanding of one and be greatfull for what you have.
+                        <p>As 2023's Robert Gordon University graduate and an employee, I'm more than capable to provide commercial value to <b>{props.orgName}</b> by being self sufficiant and having a good mind for problemsolving. <br/><br/>Possessing a broad range of knowledge across technologies and development practices, including; <b>ReactJs</b>, <b>JavaScript</b>, <b>Java</b>, ,<b>NodeJs</b>, <b>Restful API's</b>, <b>Unit Testing</b>, <b>Integration Testing</b>, <b> CSS + Responsive Web Design</b> I gained extensive hands-on experience with these technologies during my 2+ years at Collabro, where I was heavily exposed to modern software development practices and contributed to a variety of projects.
                         </p>
                         <div className="about-me-button-container">
                             <button onClick={handleClickContact} className="contact-me-button">Contact Me</button>

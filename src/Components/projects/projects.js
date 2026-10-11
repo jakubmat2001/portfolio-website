@@ -3,7 +3,7 @@ import { MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
 import faceRecogn from "../../Images/FaceRecognitionProject.png"
 import QuoteCalculator from "../../Images/QuoteCalculator.png"
 import dockKeep from "../../Images/DK.png"
-import "./projects.css"
+import "./Projects.css"
 
 const Projects = React.forwardRef((props, ref) => {
     const [imageLinks, setImageLinks] = useState({
@@ -12,6 +12,7 @@ const Projects = React.forwardRef((props, ref) => {
         faceRecogn: ""
     })
 
+    // TODO create a reusable img component which returns these
     useEffect(() => {
         setImageLinks({
             dockKeep: "https://github.com/jakubmat2001/DocKeep",
@@ -28,7 +29,7 @@ const Projects = React.forwardRef((props, ref) => {
                 </div>
             </div>
             <div className="project-panel-container">
-                <MDBCarousel showControls interval={8000}>
+                <MDBCarousel showControls interval={8000} dark={true}>
                     <MDBCarouselItem itemId={1}>
                         <a href={imageLinks.faceRecogn} target="_blank" rel="noreferrer">
                             <img src={faceRecogn} id="project-images-fd" className='d-block w-100' alt='face-detection webapp snipet' /></a>
