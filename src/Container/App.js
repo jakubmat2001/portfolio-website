@@ -4,15 +4,15 @@ import { Fade, Slide } from 'react-awesome-reveal';
 import Navigation from '../Components/navigation/navigation';
 import SpashText from '../Components/spashText/spashText';
 import AboutMe from '../Components/aboutMe/aboutMe';
-import Projects from '../Components/Projects/Projects';
 import Education from '../Components/Education/education';
 import ContactMe from '../Components/ContactMe/contactMe';
 import Modal from "../Components/Modal/modal";
 import PopUp from '../Components/PopUp/popUp';
 import DirectContact from '../Components/DirectContact/directContact';
-import "./App.css";
-import '../fonts/Comfortaa-Medium.ttf';
 import WorkExperience from '../Components/WorkExperience/WorkExperience';
+import Projects from '../Components/projects/projects';
+import '../fonts/Comfortaa-Medium.ttf';
+import "./App.css";
 
 const App = () => {
   const [clientViewHeight, setClientViewHeight] = useState(0);
