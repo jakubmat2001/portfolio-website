@@ -12,7 +12,7 @@ const Projects = React.forwardRef((props, ref) => {
         faceRecogn: ""
     })
 
-    // TODO create a reusable img component which returns these
+    // TODO create a reusable img component which returns link with an image
     useEffect(() => {
         setImageLinks({
             dockKeep: "https://github.com/jakubmat2001/DocKeep",

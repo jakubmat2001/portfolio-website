@@ -10,7 +10,7 @@ const WorkExperience = React.forwardRef((props, ref) => {
           workWebsite: "",
      })
 
-     // TODO create a reusable img component which returns these
+     // TODO create a reusable img component which returns link with an image
      useEffect(() => {
           setImageLinks({
                workWebsite: "https://collabro-group.com/",
