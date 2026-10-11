@@ -2,7 +2,7 @@ import React from "react";
 import selfie from "../../Images/selfie.png"
 import './aboutMe.css'
 
-const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
+const AboutMe = (props) => {
 
     const handleClickContact = (e) => {
         e.preventDefault();
@@ -10,7 +10,7 @@ const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
     };
 
     return (
-        <div ref={navigateAboutMeRef} className="about-me-container">
+        <div className="about-me-container">
             <div className='about-me-wrapper'>
                 <div className="about-me-left-container">
                     <div className="about-me-left-content">
@@ -30,6 +30,6 @@ const AboutMe = React.forwardRef((props, navigateAboutMeRef) => {
             </div>
         </div>
     )
-})
+}
 
 export default AboutMe

@@ -1,13 +1,12 @@
-import React from "react";
 import { Tilt } from 'react-tilt';
 import defaultOptions from "../../Utiliy/tiltOptions";
 import uniGradeSheet from "../../Images/UniGradeProfile.png";
 import uniAwardCert from "../../Images/UniAwardGrade.png";
 import "./education.css";
 
-const Education = React.forwardRef((props, ref) => {
+const Education = () => {
     return (
-        <div ref={ref} className="education-container">
+        <div className="education-container">
             <div className="education-title-container">
                 <p>Education</p>
             </div>
@@ -32,6 +31,6 @@ const Education = React.forwardRef((props, ref) => {
             </div>
         </div>
     )
-})
+}
 
 export default Education;

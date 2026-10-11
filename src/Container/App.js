@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Fade from 'react-reveal/Fade';
+import { useState, useRef, useEffect } from 'react';
+import { Fade, Slide } from 'react-awesome-reveal';
 
 import Navigation from '../Components/navigation/navigation';
 import SpashText from '../Components/spashText/spashText';
@@ -8,10 +8,8 @@ import Projects from '../Components/Projects/Projects';
 import Education from '../Components/Education/education';
 import ContactMe from '../Components/ContactMe/contactMe';
 import Modal from "../Components/Modal/modal";
-import RequestGrades from '../Components/RequestGrades/requestGrades'
 import PopUp from '../Components/PopUp/popUp';
 import DirectContact from '../Components/DirectContact/directContact';
-
 import "./App.css";
 import '../fonts/Comfortaa-Medium.ttf';
 import WorkExperience from '../Components/WorkExperience/WorkExperience';
@@ -21,7 +19,6 @@ const App = () => {
   const [name] = useState("Visitor");
   const [orgName, setOrgName] = useState('your company');
   const [modalOpen, setModalOpen] = useState({
-    isRequestGradesOpen: false,
     isDirectContactOpen: false,
     isPopUpOpen: false
   })
@@ -38,6 +35,7 @@ const App = () => {
   const clientWindowHeight = useRef(null)
 
   useEffect(() => {
+    scrollToTop();
     if (clientWindowHeight.current) {
       setClientViewHeight(clientWindowHeight.current.clientHeight);
     }
@@ -45,6 +43,9 @@ const App = () => {
       setModalOpen({ isPopUpOpen: true })
     }, 1500)
   }, []);
+
+  const scrollToTop = () => window.scrollTo(0, 0);
+  
 
   const scrollToSpashText = () => {
     navigateSpashTextRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -70,14 +71,6 @@ const App = () => {
     navigateWorkRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const toggleRequestGrades = (e) => {
-    setModalOpen((prevState) => ({
-      ...prevState,
-      isRequestGradesOpen: !prevState.isRequestGradesOpen
-    }));
-    e.preventDefault();
-  };
-
   const togglePopUp = (e) => {
     setModalOpen((prevState) => ({
       ...prevState,
@@ -100,10 +93,6 @@ const App = () => {
 
   return (
     <div id='page-view-height' ref={clientWindowHeight}>
-      {modalOpen.isRequestGradesOpen &&
-        <Modal >
-          <RequestGrades toggleRequestGrades={toggleRequestGrades} />
-        </Modal>}
       {modalOpen.isPopUpOpen &&
         <Modal>
           <PopUp togglePopUp={togglePopUp} handleChangeText={handleChangeText} />
@@ -112,7 +101,7 @@ const App = () => {
         <Modal>
           <DirectContact toggleDirectContact={toggleDirectContact} />
         </Modal>}
-      <div className='home-view'>
+      <div className='home-view' ref={navigateSpashTextRef}>
         <Navigation
           scrollToSpashText={scrollToSpashText}
           scrollToAboutMe={scrollToAboutMe}
@@ -122,32 +111,32 @@ const App = () => {
           scrollToWork={scrollToWork}
           clientViewHeight={clientViewHeight}
         />
-        <Fade top>
-          <SpashText name={name} ref={navigateSpashTextRef} />
+        <Fade triggerOnce>
+          <SpashText name={name} />
         </Fade>
       </div>
-      <div className='about-me-view'>
-        <Fade left>
-          <AboutMe ref={navigateAboutMeRef} orgName={orgName} scrollToContacts={scrollToContacts} />
+      <div className='about-me-view' ref={navigateAboutMeRef}>
+        <Fade triggerOnce>
+          <AboutMe orgName={orgName} scrollToContacts={scrollToContacts} />
         </Fade>
       </div>
-      <div className='work-experience-view'>
-        <Fade>
-          <WorkExperience ref={navigateWorkRef}/>
+      <div className='work-experience-view' ref={navigateWorkRef}>
+        <Slide triggerOnce>
+          <WorkExperience />
+        </Slide>
+      </div>
+      <div className='projects-view' ref={navigateProjectsRef}>
+        <Slide direction='right' triggerOnce>
+          <Projects />
+        </Slide>
+      </div>
+      <div className='education-view' ref={navigateEducationRef}>
+        <Fade triggerOnce>
+          <Education />
         </Fade>
       </div>
-      <div className='projects-view'>
-        <Fade right>
-          <Projects ref={navigateProjectsRef} />
-        </Fade>
-      </div>
-      <div className='education-view'>
-        <Fade left>
-          <Education ref={navigateEducationRef} />
-        </Fade>
-      </div>
-      <div className='contact-view'>
-        <ContactMe ref={navigateContactMeRef} toggleRequestGrades={toggleRequestGrades} toggleDirectContact={toggleDirectContact} />
+      <div className='contact-view' ref={navigateContactMeRef}>
+        <ContactMe toggleDirectContact={toggleDirectContact} />
       </div>
     </div>
   );

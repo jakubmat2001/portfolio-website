@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselItem } from 'mdb-react-ui-kit';
 import workEntrace from '../../Images/workEntrance.png';
 import workWebsite from '../../Images/workWebsite.png';
 import './WorkExperience.css';
 import dayjs from 'dayjs';
 
-const WorkExperience = React.forwardRef((props, ref) => {
+const WorkExperience = () => {
      const [imageLinks, setImageLinks] = useState({
           workWebsite: "",
      })
@@ -18,7 +18,7 @@ const WorkExperience = React.forwardRef((props, ref) => {
      }, [])
 
      return (
-          <div className="work-experience-container" ref={ref}>
+          <div className="work-experience-container">
                <div id='work-experience-body'>
                     <header className='work-experience-header'>
                          Work Experience
@@ -26,9 +26,9 @@ const WorkExperience = React.forwardRef((props, ref) => {
                     <div className="work-experience-wrapper">
                          <section className='work-experience-content'>
                               <p>Employed as a Junior Software Engineer since <b>23/07/2024</b> to this day (<b>{dayjs().format('DD/MM/YYYY')}</b>).
-                                   Daily responsibilites consist of attending daily morning standup calls, working on featrues improving applications used by our clients such as;
+                                   Daily responsibilites consist of attending daily morning standup calls, working on features improving applications used by our clients such as;
                                    API integrations, functionaliy improvments and more; resolving application related client raised issues; writing unit/integration test coverage;
-                                   deploying applications into test envirnoments and production environments once approval has been granted.</p>
+                                   deploying applications into test enviroments and production environments once approval from seniors has been granted.</p>
                          </section>
                          <section className='work-experience-content'>
                               <MDBCarousel showControls interval={8000}>
@@ -57,7 +57,7 @@ const WorkExperience = React.forwardRef((props, ref) => {
                </div>
           </div>
      )
-})
+}
 
 
 export default WorkExperience;

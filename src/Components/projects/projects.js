@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
 import faceRecogn from "../../Images/FaceRecognitionProject.png"
 import QuoteCalculator from "../../Images/QuoteCalculator.png"
 import dockKeep from "../../Images/DK.png"
 import "./Projects.css"
 
-const Projects = React.forwardRef((props, ref) => {
+const Projects = () => {
     const [imageLinks, setImageLinks] = useState({
         dockKeep: "",
         quoteCalculator: "",
@@ -22,7 +22,7 @@ const Projects = React.forwardRef((props, ref) => {
     }, [])
 
     return (
-        <div ref={ref} className="project-container">
+        <div className="project-container">
             <div className="project-title-container">
                 <div className="project-title-text">
                     <p>PROJECTS</p>
@@ -69,6 +69,6 @@ const Projects = React.forwardRef((props, ref) => {
 
         </div>
     )
-})
+}
 
 export default Projects;

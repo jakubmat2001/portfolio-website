@@ -1,10 +1,9 @@
-import React from "react";
 import "./contactMe.css"
 
-const ContactMe = React.forwardRef((props, ref) => {
+const ContactMe = (props) => {
 
     return (
-        <div ref={ref} className="contact-me-container">
+        <div className="contact-me-container">
 
             <footer
                 className="text-center text-lg-start text-white"
@@ -71,6 +70,6 @@ const ContactMe = React.forwardRef((props, ref) => {
             </footer>
         </div >
     )
-})
+}
 
 export default ContactMe;

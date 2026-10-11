@@ -1,8 +1,7 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import "./spashText.css"
 
-const SpashText = React.forwardRef((props, navigateSpashTextRef) => {
+const SpashText = (props) => {
     const [displayText, setDisplayText] = useState("Visitor")
 
     useEffect(() => {
@@ -14,7 +13,7 @@ const SpashText = React.forwardRef((props, navigateSpashTextRef) => {
     }, [props.name]);
 
     return (
-        <div ref={navigateSpashTextRef} className="spashText-container">
+        <div className="spashText-container">
 
             <div className="text-container">
                 <p>Welcome</p>
@@ -22,6 +21,6 @@ const SpashText = React.forwardRef((props, navigateSpashTextRef) => {
             </div>
         </div>
     )
-})
+}
 
 export default SpashText;
