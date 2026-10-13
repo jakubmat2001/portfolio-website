@@ -3,7 +3,7 @@ import { MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
 import faceRecogn from "../../Images/FaceRecognitionProject.png"
 import QuoteCalculator from "../../Images/QuoteCalculator.png"
 import dockKeep from "../../Images/DK.png"
-import "./Projects.css"
+import "./projects.css"
 
 const Projects = () => {
     const [imageLinks, setImageLinks] = useState({
